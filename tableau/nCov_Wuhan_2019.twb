@@ -1,0 +1,3605 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0220.0839                               -->
+<workbook source-build='2019.4.0 (20194.19.1010.1202)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <CustomReferenceLineTooltips ignorable='true' predowngraded='true' />
+    <MapboxVectorStylesAndLayers />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+    <ZoneFriendlyName ignorable='true' predowngraded='true' />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019?rev=5.7' id='nCov_Wuhan_2019' path='/workbooks' revision='5.7' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='amanai_category' type='regular'>
+      <color>#628395</color>
+      <color>#c46e95</color>
+      <color>#ffe47a</color>
+      <color>#f7fff7</color>
+      <color>#d7d9d7</color>
+      <color>#f6bd60</color>
+      <color>#d9a2bb</color>
+      <color>#9bb0bb</color>
+    </color-palette>
+  </preferences>
+  <style-theme name='modern' />
+  <style>
+    <style-rule element='refline'>
+      <format attr='stroke-color' value='#ffffff' />
+    </style-rule>
+    <style-rule element='gridline'>
+      <format attr='line-visibility' value='off' />
+    </style-rule>
+    <style-rule element='zeroline'>
+      <format attr='line-visibility' value='off' />
+    </style-rule>
+    <style-rule element='all'>
+      <format attr='font-family' value='Tableau Light' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource caption='Arkusz1 (Export_for_tableau_with_SARS)' inline='true' name='federated.04iciev0k1p29b17xwqog0xkluhs' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Export_for_tableau_with_SARS' name='google-sheets.01kq58c1exg4ie195ymnh188z3fv'>
+            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='no' compat='no' dataRefreshTime='' googleSheetId='1pcrzldCtWjEzhsYqmt6G-MebIjnkkiW-jw6lZOo5s5k' interpretationMode='8' mimeType='application/vnd.google-apps.spreadsheet' server-oauth='' validate='no' workgroup-auth-mode='prompt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='google-sheets.01kq58c1exg4ie195ymnh188z3fv' name='Arkusz1' table='[Arkusz1$]' type='table'>
+          <columns gridOrigin='A1:I4795:no:A1:I4795:0' header='yes' outcome='2'>
+            <column datatype='string' name='Province/State' ordinal='0' />
+            <column datatype='string' name='Country/Region' ordinal='1' />
+            <column datatype='real' name='Lat' ordinal='2' />
+            <column datatype='real' name='Long' ordinal='3' />
+            <column datatype='date' date-parse-format='yyyy-MM-dd' name='Date' ordinal='4' />
+            <column datatype='integer' name='Confirmed' ordinal='5' />
+            <column datatype='integer' name='Deaths' ordinal='6' />
+            <column datatype='integer' name='Recovered' ordinal='7' />
+            <column datatype='string' name='Epidemy' ordinal='8' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I4795:no:A1:I4795:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province/State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Province/State]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Province/State</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country/Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country/Region]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Country/Region</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Lat]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Lat</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Long]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Long</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confirmed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Confirmed]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Confirmed</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deaths]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Deaths</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Recovered</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Recovered]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Recovered</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Epidemy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Epidemy]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Epidemy</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='dayNum' datatype='integer' name='[Calculation_1413285872440422404]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='if [Epidemy] == &apos;Corona&apos; THEN DATEDIFF(&apos;day&apos;,#2020-01-16#,[Date])&#13;&#10;else  DATEDIFF(&apos;day&apos;,#2003-03-17#,[Date]) END' />
+      </column>
+      <column caption='Today_num' datatype='integer' name='[Calculation_679762083920781312]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,#16-01-2020#,Today())' />
+      </column>
+      <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+      <column aggregation='None' datatype='string' name='[Country/Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='integer' name='[Deaths]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Epidemy]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+        </aliases>
+      </column>
+      <column aggregation='Avg' datatype='real' name='[Lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='None' datatype='string' name='[Province/State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column-instance column='[Epidemy]' derivation='None' name='[none:Epidemy:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Lat]' derivation='None' name='[none:Lat:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Long]' derivation='None' name='[none:Long:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Confirmed]' derivation='Sum' name='[sum:Confirmed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Deaths]' derivation='Sum' name='[sum:Deaths:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (dayNum,Confirmed,Country,Epidemy,Lat,Long,Province/State2,Province/State)' hidden='true' name='[Action (dayNum,Confirmed,Country,Epidemy,Lat,Long,Province/State2,Province/State)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1413285872440422404]' />
+          <groupfilter function='level-members' level='[Confirmed]' />
+          <groupfilter function='level-members' level='[Country/Region]' />
+          <groupfilter function='level-members' level='[Epidemy]' />
+          <groupfilter function='level-members' level='[none:Lat:ok]' />
+          <groupfilter function='level-members' level='[none:Long:ok]' />
+          <groupfilter function='level-members' level='[Province/State2]' />
+          <groupfilter function='level-members' level='[Province/State]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Extracts/federated_04iciev0k1p29b17xwqog0.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='02/20/2020 09:32:59 PM'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='Arkusz1 (Export_for_tableau_with_SARS)' increment-value='%null%' refresh-type='create' rows-inserted='4794' timestamp-start='2020-02-20 21:32:59.964' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Province/State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Province/State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Province/State</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>55</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country/Region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country/Region]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country/Region</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>47</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lat</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Lat]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Lat</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Arkusz1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>113</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Long</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Long]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Long</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Arkusz1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>113</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Arkusz1</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>127</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confirmed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Confirmed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confirmed</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>436</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deaths</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>113</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Recovered</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Recovered]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Recovered</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>276</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Epidemy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Epidemy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Epidemy</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.474971' measure-ordering='alphabetic' measure-percentage='0.525029' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#3b96b2'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[max:Recovered:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Demised:qk]&quot;</bucket>
+            </map>
+            <map to='#9e3a26'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[max:Deaths:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Suspected:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Recovered:qk]&quot;</bucket>
+            </map>
+            <map to='#f0751e'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[max:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[max:Count:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Count:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Epidemy:nk]' type='palette'>
+            <map to='#2b4570'>
+              <bucket>&quot;Corona&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;SARS&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Epidemy:nk]&#10;[:Measure Names]' type='palette'>
+            <map to='#628395'>
+              <multibucket>
+                <bucket>&quot;Corona&quot;</bucket>
+                <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#9bb0bb'>
+              <multibucket>
+                <bucket>&quot;Corona&quot;</bucket>
+                <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#c46e95'>
+              <multibucket>
+                <bucket>&quot;SARS&quot;</bucket>
+                <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d9a2bb'>
+              <multibucket>
+                <bucket>&quot;SARS&quot;</bucket>
+                <bucket>&quot;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='dane2' inline='true' name='federated.0tr0jxu0u70wxl14uiqcl1llvr5d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dane2' name='textscan.0rs95zw1mjcvi21exxqto1hv8qot'>
+            <connection class='textscan' cleaning='yes' compat='no' csvFile='C:/Users/marty/Desktop/Ola/dane2.csv' dataRefreshTime='' directory='C:/Users/marty/Desktop/Ola' interpretationMode='8' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='Export_for_tableau_with_SARS' name='google-sheets.11bvvim0cabmyj1cldx2l1al6vxc'>
+            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='yes' compat='no' dataRefreshTime='' googleSheetId='1pcrzldCtWjEzhsYqmt6G-MebIjnkkiW-jw6lZOo5s5k' interpretationMode='9' mimeType='application/vnd.google-apps.spreadsheet' server-oauth='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='google-sheets.11bvvim0cabmyj1cldx2l1al6vxc' name='Arkusz1' table='[Arkusz1$]' type='table'>
+          <columns gridOrigin='A1:K3354:no:A1:K3354:1' header='yes' lost='0' outcome='1' processed='15178'>
+            <column datatype='string' name='Province/State' ordinal='0' />
+            <column datatype='string' name='Country/Region' ordinal='1' />
+            <column datatype='date' date-parse-format='MM/dd/yyyy' name='First_confirmed_date' ordinal='2' />
+            <column datatype='real' name='Lat' ordinal='3' />
+            <column datatype='real' name='Long' ordinal='4' />
+            <column datatype='date' date-parse-format='yyyy-MM-dd|#|#|MM/dd/yyyy hh:mm a' name='Date' ordinal='5' />
+            <column datatype='integer' name='Confirmed' ordinal='6' />
+            <column datatype='integer' name='Recovered' ordinal='7' />
+            <column datatype='integer' name='Deaths' ordinal='8' />
+            <column datatype='string' name='Epidemy' ordinal='9' />
+            <column datatype='string' name='Province/State2' ordinal='10' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:K3354:no:A1:K3354:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>15178</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province/State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Province/State]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Province/State</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country/Region</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country/Region]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Country/Region</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>First_confirmed_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[First_confirmed_date]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>First_confirmed_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Lat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Lat]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Lat</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Long</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Long]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Long</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confirmed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Confirmed]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Confirmed</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Recovered</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Recovered]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Recovered</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deaths]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Deaths</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Epidemy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Epidemy]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Epidemy</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Province/State2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Province/State2]</local-name>
+            <parent-name>[Arkusz1]</parent-name>
+            <remote-alias>Province/State2</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LPL_RPL_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Confirmed:qk]&quot;' value='Infected' />
+          <alias key='&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Deaths:qk]&quot;' value='Deaths' />
+          <alias key='&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Confirmed:qk]&quot;' value='Confirmed' />
+          <alias key='&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Deaths:qk]&quot;' value='Deaths ' />
+        </aliases>
+      </column>
+      <column caption='CFR' datatype='real' name='[Calculation_1413285872438337536]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='sum([Deaths])/sum([Confirmed])' />
+      </column>
+      <column caption='dayNum' datatype='integer' name='[Calculation_1413285872440422404]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='if [Epidemy] == &apos;Corona&apos; THEN DATEDIFF(&apos;day&apos;,#2020-01-21#,[Date])&#13;&#10;else  DATEDIFF(&apos;day&apos;,#2003-03-17#,[Date]) END' />
+      </column>
+      <column caption='Today_num' datatype='integer' name='[Calculation_679762083920781312]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,#21.01.2020#,Today())' />
+      </column>
+      <column caption='dayNum2' datatype='integer' name='[Calculation_897342240508510211]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1413285872440422404]' />
+      </column>
+      <column datatype='integer' name='[Confirmed]' role='dimension' type='ordinal' />
+      <column aggregation='None' caption='Country' datatype='string' name='[Country/Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+        <semantic-values semantic-role='[Country].[Name]'>
+          <semantic-value key='&quot;Mainland China&quot;' value='&quot;China&quot;' />
+        </semantic-values>
+      </column>
+      <column datatype='integer' name='[Deaths]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Epidemy]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+        </aliases>
+      </column>
+      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='None' datatype='string' name='[Province/State2]' role='dimension' semantic-role='[State].[Name]' type='nominal'>
+        <semantic-values semantic-role='[State].[Name]'>
+          <semantic-value key='&quot;Adygeya, Respublika&quot;' value='&quot;Respublika Adygeya&quot;' />
+          <semantic-value key='&quot;Boston, MA&quot;' value='&quot;Massachusetts&quot;' />
+          <semantic-value key='&quot;Chicago&quot;' value='&quot;Illinois&quot;' />
+          <semantic-value key='&quot;Chicago, IL&quot;' value='&quot;Illinois&quot;' />
+          <semantic-value key='&quot;Los Angeles, CA&quot;' value='&quot;California&quot;' />
+          <semantic-value key='&quot;Orange, CA&quot;' value='&quot;California&quot;' />
+          <semantic-value key='&quot;Santa Clara, CA&quot;' value='&quot;California&quot;' />
+          <semantic-value key='&quot;Seattle, WA&quot;' value='&quot;Washington&quot;' />
+          <semantic-value key='&quot;Tempe, AZ&quot;' value='&quot;Arizona&quot;' />
+        </semantic-values>
+      </column>
+      <column aggregation='None' datatype='string' name='[Province/State]' role='dimension' semantic-role='' type='nominal' />
+      <column datatype='integer' name='[Recovered]' role='dimension' type='ordinal' />
+      <column-instance column='[Confirmed]' derivation='Max' name='[max:Confirmed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Deaths]' derivation='Max' name='[max:Deaths:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recovered]' derivation='Max' name='[max:Recovered:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Epidemy]' derivation='None' name='[none:Epidemy:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Lat]' derivation='None' name='[none:Lat:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Long]' derivation='None' name='[none:Long:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Confirmed]' derivation='Sum' name='[sum:Confirmed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Deaths]' derivation='Sum' name='[sum:Deaths:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recovered]' derivation='Sum' name='[sum:Recovered:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (dayNum,Confirmed,Country,Epidemy,Lat,Long,Province/State2,Province/State)' hidden='true' name='[Action (dayNum,Confirmed,Country,Epidemy,Lat,Long,Province/State2,Province/State)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1413285872440422404]' />
+          <groupfilter function='level-members' level='[Confirmed]' />
+          <groupfilter function='level-members' level='[Country/Region]' />
+          <groupfilter function='level-members' level='[Epidemy]' />
+          <groupfilter function='level-members' level='[none:Lat:ok]' />
+          <groupfilter function='level-members' level='[none:Long:ok]' />
+          <groupfilter function='level-members' level='[Province/State2]' />
+          <groupfilter function='level-members' level='[Province/State]' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='Country, Province/State2'>
+          <field>[Country/Region]</field>
+          <field>[Province/State2]</field>
+        </drill-path>
+      </drill-paths>
+      <extract count='-1' enabled='true' units='records'>
+        <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/TEMP_10euwb31qf30tq16b4mw70i6p5ug.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/04/2020 10:03:49 PM' updated-database='/Users/anna.meringer/amanai/korona/repos/corona/tableau/nCov_Wuhan_2019.twb Files/Data/Extracts/federated_0tr0jxu0u70wxl14uiqcl1.hyper'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='dane2' increment-value='%null%' refresh-type='create' rows-inserted='3353' timestamp-start='2020-02-04 22:03:49.483' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Province/State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Province/State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Province/State</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>45</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPL_RPL' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country/Region</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country/Region]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country/Region</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>43</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPL_RPL' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>First_confirmed_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[First_confirmed_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>First_confirmed_date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Arkusz1</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Lat</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Lat]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Lat</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Arkusz1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>102</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Long</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Long]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Long</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Arkusz1</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>102</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Arkusz1</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>111</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confirmed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Confirmed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confirmed</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>277</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Recovered</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Recovered]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Recovered</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>203</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deaths</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Arkusz1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>112</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Epidemy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Epidemy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Epidemy</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPL_RPL' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Province/State2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Province/State2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Province/State2</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Arkusz1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>78</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPL_RPL' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.562282' measure-ordering='alphabetic' measure-percentage='0.437718' show-aliased-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#3b96b2'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Recovered:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Demised:qk]&quot;</bucket>
+            </map>
+            <map to='#9e3a26'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Deaths:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Suspected:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Deaths:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Recovered:qk]&quot;</bucket>
+            </map>
+            <map to='#f0751e'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[max:Count:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0tr0jxu0u70wxl14uiqcl1llvr5d].[sum:Count:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Epidemy:nk]&#10;[:Measure Names]' type='palette'>
+            <map-pri to='multiordinal_blue'>
+              <bucket>&quot;Corona&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_orange'>
+              <bucket>&quot;SARS&quot;</bucket>
+            </map-pri>
+          </encoding>
+          <encoding attr='color' field='[none:Epidemy:nk]' type='palette'>
+            <map to='#2b4570'>
+              <bucket>&quot;Corona&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;SARS&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Poland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Confirmed' />
+        <field-sort-custom-order field='Country/Region' />
+        <field-sort-custom-order field='Calculation_262897642044346368' />
+        <field-sort-custom-order field='Deaths' />
+        <field-sort-custom-order field='Demised' />
+        <field-sort-custom-order field='Last Update' />
+        <field-sort-custom-order field='Calculation_897342240786980869' />
+        <field-sort-custom-order field='Province/State' />
+        <field-sort-custom-order field='Recovered' />
+        <field-sort-custom-order field='Suspected' />
+        <field-sort-custom-order field='Category' />
+        <field-sort-custom-order field='Count' />
+        <field-sort-custom-order field='Calculation_897342240497516545' />
+      </field-sort-info>
+    </datasource>
+    <datasource caption='epidemics' inline='true' name='federated.1kljxw91d6e7rb1e6xtij0yi2tc3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='epidemics_days' name='google-sheets.17wj1vj1omtidk1793j0f1xly263'>
+            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='no' compat='no' dataRefreshTime='' googleSheetId='1Egob_dt-mvluNwqaoz8gSk54t7KKkXVHKjS0omk6W8g' interpretationMode='8' mimeType='application/vnd.google-apps.spreadsheet' server-oauth='' validate='no' workgroup-auth-mode='prompt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='google-sheets.17wj1vj1omtidk1793j0f1xly263' name='epidemics_days' table='[epidemics_days$]' type='table'>
+          <columns gridOrigin='A1:M835:no:A1:M835:0' header='yes' outcome='2'>
+            <column datatype='real' name='CFR' ordinal='0' />
+            <column datatype='integer' name='Confirmed' ordinal='1' />
+            <column datatype='integer' name='Deaths' ordinal='2' />
+            <column datatype='string' name='Epidemy' ordinal='3' />
+            <column datatype='string' name='Name' ordinal='4' />
+            <column datatype='real' date-parse-format='ss.SS|#|#|MM' name='R0' ordinal='5' />
+            <column datatype='date' name='Date' ordinal='6' />
+            <column datatype='string' name='end_year' ordinal='7' />
+            <column datatype='string' name='notes' ordinal='8' />
+            <column datatype='string' name='start_year' ordinal='9' />
+            <column datatype='string' name='years' ordinal='10' />
+            <column datatype='real' name='R0min' ordinal='11' />
+            <column datatype='real' name='R0max' ordinal='12' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CFR</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CFR]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>CFR</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confirmed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Confirmed]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Confirmed</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deaths]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Deaths</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Epidemy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Epidemy]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Epidemy</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[R0]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>R0</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_year</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[end_year]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>end_year</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>notes</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[notes]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>notes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_year</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[start_year]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>start_year</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[years]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>years</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R0min</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[R0min]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>R0min</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R0max</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[R0max]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>R0max</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:M835:no:A1:M835:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' name='[CFR]' role='dimension' type='ordinal' />
+      <column caption='CFR_calc (copy)' datatype='real' name='[CFR_calc (copy)_679762083963092994]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='sum([Deaths])/SUM([Confirmed])' />
+      </column>
+      <column caption='start_year_int' datatype='integer' datatype-customized='true' name='[Calculation_1114992766603526144]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='int([start_year])' />
+      </column>
+      <column caption='1000confirmed' datatype='integer' name='[Calculation_25825343924391936]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CEILING([Confirmed]/1000)' />
+      </column>
+      <column caption='100deaths' datatype='integer' name='[Calculation_25825343925039105]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ceiling([Deaths]/100)' />
+      </column>
+      <column caption='bar_width' datatype='integer' name='[Calculation_25825343926136834]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='FLOOR([Calculation_25825343924391936]/1000)' />
+      </column>
+      <column caption='lastbar' datatype='integer' name='[Calculation_25825343932305412]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_25825343924391936]-[Calculation_25825343926136834]*1000' />
+      </column>
+      <column caption='bar_height' datatype='integer' datatype-customized='true' name='[Calculation_25825343933751301]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='INT(if [Calculation_25825343926136834]&gt;0 then 1000 else 0 END)' />
+      </column>
+      <column caption='lastbar_width' datatype='integer' name='[Calculation_25825343940112391]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Calculation_25825343932305412] &gt; 0 then 1 else 0 END' />
+      </column>
+      <column caption='ConfirmedR' datatype='integer' datatype-customized='true' name='[Calculation_25825343946747912]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INT(Round([Confirmed]/1000000))' />
+      </column>
+      <column caption='CFR_calc' datatype='real' name='[Calculation_679762083955224577]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='sum([Deaths])/SUM([Confirmed])' />
+      </column>
+      <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Deaths]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Epidemy]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+        </aliases>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='CountD' datatype='real' name='[R0]' role='dimension' type='ordinal' />
+      <column-instance column='[R0]' derivation='Avg' name='[avg:R0:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343946747912]' derivation='Max' name='[max:Calculation_25825343946747912:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Confirmed]' derivation='Max' name='[max:Confirmed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Confirmed]' derivation='None' name='[none:Confirmed:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[CFR]' derivation='Sum' name='[sum:CFR:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343924391936]' derivation='Sum' name='[sum:Calculation_25825343924391936:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343925039105]' derivation='Sum' name='[sum:Calculation_25825343925039105:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343926136834]' derivation='Sum' name='[sum:Calculation_25825343926136834:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343932305412]' derivation='Sum' name='[sum:Calculation_25825343932305412:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343933751301]' derivation='Sum' name='[sum:Calculation_25825343933751301:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343940112391]' derivation='Sum' name='[sum:Calculation_25825343940112391:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_25825343946747912]' derivation='Sum' name='[sum:Calculation_25825343946747912:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Confirmed]' derivation='Sum' name='[sum:Confirmed:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Deaths]' derivation='Sum' name='[sum:Deaths:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[R0]' derivation='Sum' name='[sum:R0:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Confirmed,Epidemy)' hidden='true' name='[Action (Confirmed,Epidemy)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Confirmed:ok]' />
+          <groupfilter function='level-members' level='[Epidemy]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/TEMP_1k4by0q0yi4foa161ju390azzk4b.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='02/20/2020 09:09:37 PM' updated-database='/Users/anna.meringer/amanai/korona/repos/corona/tableau/nCov_Wuhan_2019.twb Files/Data/Extracts/federated_1kljxw91d6e7rb1e6xtij0.hyper'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='epidemics' increment-value='%null%' refresh-type='create' rows-inserted='834' timestamp-start='2020-02-20 21:09:37.625' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>CFR</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CFR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CFR</remote-alias>
+              <ordinal>0</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>35</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confirmed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Confirmed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confirmed</remote-alias>
+              <ordinal>1</ordinal>
+              <family>epidemics_days</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deaths</remote-alias>
+              <ordinal>2</ordinal>
+              <family>epidemics_days</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>39</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Epidemy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Epidemy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Epidemy</remote-alias>
+              <ordinal>3</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Name</remote-alias>
+              <ordinal>4</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>R0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[R0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>R0</remote-alias>
+              <ordinal>5</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>6</ordinal>
+              <family>epidemics_days</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>100</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_year</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[end_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_year</remote-alias>
+              <ordinal>7</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>notes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[notes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>notes</remote-alias>
+              <ordinal>8</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_year</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[start_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_year</remote-alias>
+              <ordinal>9</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>years</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[years]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>years</remote-alias>
+              <ordinal>10</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>R0min</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[R0min]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>R0min</remote-alias>
+              <ordinal>11</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>R0max</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[R0max]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>R0max</remote-alias>
+              <ordinal>12</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.408615' group-percentage='0.132712' measure-ordering='alphabetic' measure-percentage='0.458673' show-aliased-fields='true' show-hidden-fields='true' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Fatal_raw:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Confirmed:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[:Measure Names]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343925039105:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343924391936:qk]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Suspected:qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:my_CFR:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:CFR_adult:qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Incubation:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:countries_no:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Calculation_25825343946747912:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343926136834:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343940112391:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343946747912:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343932305412:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:CFR:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343933751301:qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Incidence_raw:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Deaths:qk]&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Number of Records:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Importance:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[avg:R0:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:R0:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Name:nk]' palette='amanai_category' type='palette'>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N23&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N30&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N40&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N48&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N56&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N6&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N64&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N72&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N80&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N88&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Bird flu H5N96&quot;</bucket>
+            </map>
+            <map to='#628395'>
+              <bucket>&quot;Corona&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N15&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N22&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N3&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N39&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N47&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N55&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N63&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N71&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N79&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N87&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N9&quot;</bucket>
+            </map>
+            <map to='#9bb0bb'>
+              <bucket>&quot;Bird flu H5N95&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N10&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N17&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N24&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N31&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N33&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N41&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N49&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N57&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N65&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N73&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N81&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N89&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;Bird flu H5N97&quot;</bucket>
+            </map>
+            <map to='#c46e95'>
+              <bucket>&quot;SARS&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N100&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N12&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N2&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N27&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N36&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N44&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N52&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N60&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N68&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N7&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N76&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N84&quot;</bucket>
+            </map>
+            <map to='#d7d9d7'>
+              <bucket>&quot;Bird flu H5N92&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N14&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N21&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N29&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N38&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N46&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N54&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N62&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N70&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N78&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N8&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N86&quot;</bucket>
+            </map>
+            <map to='#d9a2bb'>
+              <bucket>&quot;Bird flu H5N94&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N1&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N13&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N20&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N28&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N37&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N45&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N5&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N53&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N61&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N69&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N77&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N85&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Bird flu H5N93&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Chickenpox&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Ebola&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;HIV&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;HIV/AIDS&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;MERS&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Spanish flu&quot;</bucket>
+            </map>
+            <map to='#f6bd60'>
+              <bucket>&quot;Zika&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N11&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N19&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N26&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N35&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N4&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N43&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N51&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N59&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N67&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N75&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N83&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N91&quot;</bucket>
+            </map>
+            <map to='#f7fff7'>
+              <bucket>&quot;Bird flu H5N99&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N16&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N18&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N25&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N32&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N34&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N42&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N50&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N58&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N66&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N74&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N82&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N90&quot;</bucket>
+            </map>
+            <map to='#ffe47a'>
+              <bucket>&quot;Bird flu H5N98&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='CFR' />
+        <field-sort-custom-order field='Confirmed' />
+        <field-sort-custom-order field='Deaths' />
+        <field-sort-custom-order field='Calculation_679762083955224577' />
+        <field-sort-custom-order field='CFR_calc (copy)_679762083963092994' />
+        <field-sort-custom-order field='Epidemy' />
+        <field-sort-custom-order field='Name' />
+        <field-sort-custom-order field='R0' />
+        <field-sort-custom-order field='date' />
+        <field-sort-custom-order field='end_year' />
+        <field-sort-custom-order field='notes' />
+        <field-sort-custom-order field='start_year' />
+        <field-sort-custom-order field='years' />
+        <field-sort-custom-order field='Calculation_1114992766603526144' />
+        <field-sort-custom-order field='Calculation_25825343924391936' />
+        <field-sort-custom-order field='Calculation_25825343925039105' />
+        <field-sort-custom-order field='Calculation_25825343926136834' />
+        <field-sort-custom-order field='Calculation_25825343932305412' />
+        <field-sort-custom-order field='Calculation_25825343933751301' />
+        <field-sort-custom-order field='Calculation_25825343940112391' />
+        <field-sort-custom-order field='Calculation_25825343946747912' />
+      </field-sort-info>
+    </datasource>
+    <datasource caption='epidemics_days (epidemics_days)' inline='true' name='federated.1mw6tbj029eitb1altfmp0b8ev88' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='epidemics_days' name='google-sheets.0b86u3g1hfyy7n1ab258t0jsbb0w'>
+            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='no' compat='no' dataRefreshTime='' googleSheetId='1Bvo17luLa-cVvI4DdmQMKPhFaPbsPZUVxAhkkDMm7Qs' interpretationMode='8' mimeType='application/vnd.google-apps.spreadsheet' server-oauth='' validate='no' workgroup-auth-mode='prompt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='google-sheets.0b86u3g1hfyy7n1ab258t0jsbb0w' name='epidemics_days' table='[epidemics_days$]' type='table'>
+          <columns gridOrigin='A1:K172:no:A1:K172:0' header='yes' outcome='2'>
+            <column datatype='real' name='CFR' ordinal='0' />
+            <column datatype='integer' name='Confirmed' ordinal='1' />
+            <column datatype='integer' name='Deaths' ordinal='2' />
+            <column datatype='string' name='Epidemy' ordinal='3' />
+            <column datatype='string' name='Name' ordinal='4' />
+            <column datatype='real' name='R0' ordinal='5' />
+            <column datatype='date' name='date' ordinal='6' />
+            <column datatype='string' name='end_year' ordinal='7' />
+            <column datatype='string' name='notes' ordinal='8' />
+            <column datatype='string' name='start_year' ordinal='9' />
+            <column datatype='string' name='years' ordinal='10' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CFR</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CFR]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>CFR</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Confirmed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Confirmed]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Confirmed</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deaths</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deaths]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Deaths</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Epidemy</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Epidemy]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Epidemy</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R0</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[R0]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>R0</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_year</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[end_year]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>end_year</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>notes</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[notes]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>notes</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_year</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[start_year]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>start_year</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>years</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[years]</local-name>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias>years</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[epidemics_days]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:K172:no:A1:K172:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='End Year' datatype='string' name='[end_year]' role='dimension' type='nominal' />
+      <column caption='Notes' datatype='string' name='[notes]' role='dimension' type='nominal' />
+      <column caption='Start Year' datatype='string' name='[start_year]' role='dimension' type='nominal' />
+      <column caption='Years' datatype='string' name='[years]' role='dimension' type='nominal' />
+      <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/tableau-temp/TEMP_165uoik18camyo10zmg830to8895.hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/18/2020 07:33:21 PM' updated-database='/Users/anna.meringer/amanai/korona/repos/corona/tableau/nCov_Wuhan_2019.twb Files/Data/Extracts/federated_1mw6tbj029eitb1altfmp0.hyper'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>CFR</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CFR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CFR</remote-alias>
+              <ordinal>0</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Confirmed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Confirmed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Confirmed</remote-alias>
+              <ordinal>1</ordinal>
+              <family>epidemics_days</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deaths</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deaths]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deaths</remote-alias>
+              <ordinal>2</ordinal>
+              <family>epidemics_days</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Epidemy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Epidemy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Epidemy</remote-alias>
+              <ordinal>3</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Name</remote-alias>
+              <ordinal>4</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>R0</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[R0]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>R0</remote-alias>
+              <ordinal>5</ordinal>
+              <family>epidemics_days</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>6</ordinal>
+              <family>epidemics_days</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_year</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[end_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_year</remote-alias>
+              <ordinal>7</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>notes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[notes]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>notes</remote-alias>
+              <ordinal>8</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_year</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[start_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_year</remote-alias>
+              <ordinal>9</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>years</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[years]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>years</remote-alias>
+              <ordinal>10</ordinal>
+              <family>epidemics_days</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.529661' measure-ordering='alphabetic' measure-percentage='0.470339' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Name:nk]' type='palette'>
+            <map to='#17becf'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;Corona&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;Chickenpox&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;Spanish flu&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;MERS&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;HIV&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;Zika&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;Ebola&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;Bird flu&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;SARS&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='R0CFR'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='12'>Deadliness &amp; contagiousness</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019/R0CFR?rev=' id='30504400' path='/workbooks/nCov_Wuhan_2019' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='epidemics' name='federated.1kljxw91d6e7rb1e6xtij0yi2tc3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1kljxw91d6e7rb1e6xtij0yi2tc3'>
+            <column caption='CFR_calc (copy)' datatype='real' name='[CFR_calc (copy)_679762083963092994]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Deaths])/SUM([Confirmed])' />
+            </column>
+            <column caption='CFR_calc' datatype='real' name='[Calculation_679762083955224577]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='sum([Deaths])/SUM([Confirmed])' />
+            </column>
+            <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Deaths]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+              </aliases>
+            </column>
+            <column aggregation='CountD' datatype='real' name='[R0]' role='dimension' type='ordinal' />
+            <column-instance column='[Name]' derivation='Attribute' name='[attr:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[R0]' derivation='Attribute' name='[attr:R0:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Max' name='[max:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[R0]' derivation='None' name='[none:R0:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CFR_calc (copy)_679762083963092994]' derivation='User' name='[usr:CFR_calc (copy)_679762083963092994:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_679762083955224577]' derivation='User' name='[usr:Calculation_679762083955224577:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Date:qk]' included-values='in-range'>
+            <min>#2020-02-17#</min>
+            <max>#2020-04-24#</max>
+          </filter>
+          <slices>
+            <column>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' scope='cols' value='Deadliness CFR (Deaths to infected ratio)' />
+            <format attr='auto-subtitle' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' scope='cols' value='false' />
+            <format attr='height' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' value='79' />
+            <format attr='stroke-color' scope='cols' value='#e6e6e6' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-color' scope='rows' value='#e6e6e6' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='title' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:R0:qk]' scope='rows' value='Contagiousness R0 (no of people 1 person infects)' />
+            <format attr='auto-subtitle' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:R0:qk]' scope='rows' value='false' />
+            <format attr='width' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:R0:qk]' value='68' />
+            <encoding attr='space' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' field-type='quantitative' max='0.69999999999999996' min='-0.030182539312960107' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:CFR_calc (copy)_679762083963092994:qk]' value='n#,##0.000000;-#,##0.000000' />
+            <format attr='text-format' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' value='n#,##0.000000;-#,##0.000000' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' />
+              <text column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' />
+              <tooltip column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:R0:qk]' />
+              <tooltip column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]' />
+              <tooltip column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:Name:nk]' />
+              <lod column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:CFR_calc (copy)_679762083963092994:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>&lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>R0:&lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:R0:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>CFR:&#9;&lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='7' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.7911050319671631' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:R0:qk]</rows>
+        <cols>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[usr:Calculation_679762083955224577:qk]</cols>
+      </table>
+      <simple-id uuid='{3BD6CF85-A503-438B-AECF-C89B7BA6679C}' />
+    </worksheet>
+    <worksheet name='coronaDaily (2)'>
+      <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019/coronaDaily2?rev=' id='30497452' path='/workbooks/nCov_Wuhan_2019' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Arkusz1 (Export_for_tableau_with_SARS)' name='federated.04iciev0k1p29b17xwqog0xkluhs' />
+          </datasources>
+          <datasource-dependencies datasource='federated.04iciev0k1p29b17xwqog0xkluhs'>
+            <column caption='dayNum' datatype='integer' name='[Calculation_1413285872440422404]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [Epidemy] == &apos;Corona&apos; THEN DATEDIFF(&apos;day&apos;,#2020-01-16#,[Date])&#13;&#10;else  DATEDIFF(&apos;day&apos;,#2003-03-17#,[Date]) END' />
+            </column>
+            <column caption='Today_num' datatype='integer' name='[Calculation_679762083920781312]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;,#16-01-2020#,Today())' />
+            </column>
+            <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Deaths]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Epidemy]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+              </aliases>
+            </column>
+            <column-instance column='[Date]' derivation='Attribute' name='[attr:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Date]' derivation='Max' name='[max:Date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1413285872440422404]' derivation='None' name='[none:Calculation_1413285872440422404:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_1413285872440422404]' derivation='None' name='[none:Calculation_1413285872440422404:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_679762083920781312]' derivation='None' name='[none:Calculation_679762083920781312:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Epidemy]' derivation='None' name='[none:Epidemy:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Confirmed]' derivation='Sum' name='[sum:Confirmed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Deaths]' derivation='Sum' name='[sum:Deaths:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' scope='rows' value='' />
+            <format attr='width' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' value='64' />
+            <format attr='display' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' scope='rows' value='true' />
+            <format attr='width' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' value='64' />
+            <encoding attr='space' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' scope='rows' value='false' />
+            <format attr='auto-subtitle' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' scope='rows' value='false' />
+            <encoding attr='space' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]' field-type='quantitative' max='60' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='tick-color' scope='rows' value='#e6e6e6' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-color' scope='cols' value='#e6e6e6' />
+            <format attr='stroke-color' scope='rows' value='#e6e6e6' />
+            <format attr='title' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]' scope='cols' value='Days since first confirmed case' />
+            <format attr='height' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]' value='58' />
+            <format attr='auto-subtitle' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-color' data-class='subtotal' scope='rows' value='#e6e6e6' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='solid' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' value='true' />
+            <format attr='break-on-special' value='true' />
+            <format attr='show-null-value-warning' value='true' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' scope='rows' value='1' />
+            <format attr='stroke-color' scope='rows' value='#e6e6e6' />
+            <format attr='line-visibility' scope='rows' value='on' />
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline2' value='#00000000' />
+            <format attr='fill-below' id='refline2' value='#00000000' />
+            <format attr='line-visibility' id='refline2' value='on' />
+            <format attr='line-pattern-only' id='refline2' value='dotted' />
+            <format attr='vertical-align' id='refline2' value='top' />
+            <format attr='stroke-color' id='refline2' value='#e6e6e6' />
+            <format attr='stroke-size' id='refline0' value='1' />
+            <format attr='line-visibility' id='refline0' value='on' />
+            <format attr='line-pattern-only' id='refline0' value='dashed' />
+            <format attr='stroke-color' id='refline0' value='#d4d4d4' />
+            <format attr='vertical-align' id='refline0' value='top' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-color' scope='cols' value='#d4d4d4' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='1' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' value='190' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_679762083920781312:qk]' />
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Date:ok]' />
+            </encodings>
+            <reference-line axis-column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]' enable-instant-analytics='false' formula='average' id='refline0' label='Today' label-type='custom' probability='95' scope='per-pane' tooltip-type='none' value-column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_679762083920781312:qk]' z-order='1' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Epidemy:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Day of Last Update:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[tdy:Last Update:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Infected:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Deaths:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_679762083920781312:qk]' />
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Date:ok]' />
+            </encodings>
+            <label-data column='[federated.04iciev0k1p29b17xwqog0xkluhs].[max:Date:qk]' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Epidemy:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#898989'>Date:</run>
+                <run bold='true'>&#9; &lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Infected:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Deaths:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.11994475126266479' />
+                <format attr='mark-labels-mode' value='most-recent' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_679762083920781312:qk]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Date:ok]' />
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Epidemy:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Date:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Infected:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Deaths:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.11994475126266479' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk] + [federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk])</rows>
+        <cols>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:qk]</cols>
+        <pages>
+          <column>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</column>
+        </pages>
+        <page-trail-options enabled='true' lines='true' mark-type='all' />
+      </table>
+      <simple-id uuid='{F0E37F83-45E3-4A14-AB86-B8C7E651FC74}' />
+    </worksheet>
+    <worksheet name='coronaMap'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='12'>Disease spread</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019/coronaMap?rev=' id='30497451' path='/workbooks/nCov_Wuhan_2019' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Arkusz1 (Export_for_tableau_with_SARS)' name='federated.04iciev0k1p29b17xwqog0xkluhs' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.04iciev0k1p29b17xwqog0xkluhs'>
+            <column caption='dayNum' datatype='integer' name='[Calculation_1413285872440422404]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [Epidemy] == &apos;Corona&apos; THEN DATEDIFF(&apos;day&apos;,#2020-01-16#,[Date])&#13;&#10;else  DATEDIFF(&apos;day&apos;,#2003-03-17#,[Date]) END' />
+            </column>
+            <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Country/Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Deaths]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Epidemy]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+              </aliases>
+            </column>
+            <column aggregation='Avg' datatype='real' name='[Lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[Long]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column aggregation='None' datatype='string' name='[Province/State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[Province/State]' derivation='Attribute' name='[attr:Province/State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1413285872440422404]' derivation='None' name='[none:Calculation_1413285872440422404:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Confirmed]' derivation='None' name='[none:Confirmed:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Country/Region]' derivation='None' name='[none:Country/Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Epidemy]' derivation='None' name='[none:Epidemy:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Lat]' derivation='None' name='[none:Lat:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Long]' derivation='None' name='[none:Long:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Province/State]' derivation='None' name='[none:Province/State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Confirmed]' derivation='Sum' name='[sum:Confirmed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Deaths]' derivation='Sum' name='[sum:Deaths:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]'>
+            <groupfilter from='0' function='range' level='[none:Calculation_1413285872440422404:ok]' to='60' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[Longitude (generated)]' field-type='quantitative' max='16749608.307030827' min='6067536.1566935545' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[Latitude (generated)]' field-type='quantitative' max='11817666.399364319' min='-4380148.7921614358' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='12' />
+            <format attr='font-weight' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='bold' />
+            <format attr='color' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='#000000' />
+            <format attr='border-width' value='1' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' scope='rows' value='0' />
+            <format attr='border-style' scope='rows' value='none' />
+            <format attr='border-width' scope='cols' value='0' />
+            <format attr='border-style' scope='cols' value='none' />
+            <format attr='text-format' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='12' />
+            <format attr='height-header' value='44' />
+            <format attr='font-size' data-class='subtotal' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='12' />
+            <format attr='font-weight' data-class='subtotal' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' value='bold' />
+            <format attr='border-width' scope='rows' value='0' />
+            <format attr='border-style' scope='rows' value='none' />
+            <format attr='border-width' scope='cols' value='0' />
+            <format attr='border-style' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='cols' value='12' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='color' scope='cols' value='#000000' />
+            <format attr='text-format' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' data-class='subtotal' scope='cols' value='#f5f5f5' />
+            <format attr='border-width' value='1' />
+            <format attr='border-style' value='solid' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='2' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='cols' value='0' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+          <style-rule element='page-card-title'>
+            <format attr='title' value='Days since first case confirmed'>
+              <formatted-text>
+                <run>Days since first case confirmed</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' />
+              <size column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Confirmed:ok]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Country/Region:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Province/State:nk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Long:qk]' />
+              <lod column='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Lat:qk]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]' />
+              <tooltip column='[federated.04iciev0k1p29b17xwqog0xkluhs].[attr:Province/State:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Country/Region:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Province/State:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Province/State:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Confirmed:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Confirmed:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Deaths:&#9;</run>
+                <run bold='true'>&lt;[federated.04iciev0k1p29b17xwqog0xkluhs].[sum:Deaths:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+                <format attr='mark-transparency' value='29' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.04iciev0k1p29b17xwqog0xkluhs].[Latitude (generated)]</rows>
+        <cols>([federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk] * [federated.04iciev0k1p29b17xwqog0xkluhs].[Longitude (generated)])</cols>
+        <pages>
+          <column>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</column>
+        </pages>
+        <page-trail-options enabled='true' mark-type='all' trail-effect='none' />
+      </table>
+      <simple-id uuid='{6046A406-4C99-40D3-B45C-DB21E26BFDAA}' />
+    </worksheet>
+    <worksheet name='epidemics'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Number of people infected in epidemics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019/epidemics?rev=' id='30497457' path='/workbooks/nCov_Wuhan_2019' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='epidemics' name='federated.1kljxw91d6e7rb1e6xtij0yi2tc3' />
+            <datasource caption='epidemics_days (epidemics_days)' name='federated.1mw6tbj029eitb1altfmp0b8ev88' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1kljxw91d6e7rb1e6xtij0yi2tc3'>
+            <column caption='start_year_int' datatype='integer' datatype-customized='true' name='[Calculation_1114992766603526144]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='int([start_year])' />
+            </column>
+            <column caption='1000confirmed' datatype='integer' name='[Calculation_25825343924391936]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CEILING([Confirmed]/1000)' />
+            </column>
+            <column caption='bar_width' datatype='integer' name='[Calculation_25825343926136834]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='FLOOR([Calculation_25825343924391936]/1000)' />
+            </column>
+            <column caption='lastbar' datatype='integer' name='[Calculation_25825343932305412]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_25825343924391936]-[Calculation_25825343926136834]*1000' />
+            </column>
+            <column caption='bar_height' datatype='integer' datatype-customized='true' name='[Calculation_25825343933751301]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='INT(if [Calculation_25825343926136834]&gt;0 then 1000 else 0 END)' />
+            </column>
+            <column caption='ConfirmedR' datatype='integer' datatype-customized='true' name='[Calculation_25825343946747912]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='INT(Round([Confirmed]/1000000))' />
+            </column>
+            <column datatype='integer' name='[Confirmed]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Epidemy]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Corona&quot;' value='2019-nCoV' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_1114992766603526144]' derivation='Attribute' name='[attr:Calculation_1114992766603526144:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[years]' derivation='Attribute' name='[attr:years:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_25825343924391936]' derivation='Max' name='[max:Calculation_25825343924391936:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_25825343946747912]' derivation='Max' name='[max:Calculation_25825343946747912:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Confirmed]' derivation='Max' name='[max:Confirmed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Epidemy]' derivation='None' name='[none:Epidemy:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Name]' derivation='None' name='[none:Name:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[start_year]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_25825343932305412]' derivation='Sum' name='[sum:Calculation_25825343932305412:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_25825343933751301]' derivation='Sum' name='[sum:Calculation_25825343933751301:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[years]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1mw6tbj029eitb1altfmp0b8ev88'>
+            <column datatype='string' name='[Name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343933751301:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Calculation_25825343932305412:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Epidemy:nk]'>
+            <groupfilter function='level-members' level='[none:Epidemy:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' direction='DESC' using='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Calculation_25825343924391936:qk]' />
+          <slices>
+            <column>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[:Measure Names]</column>
+            <column>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Epidemy:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[Multiple Values]' scope='rows' value='false' />
+            <format attr='height' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' value='32' />
+            <format attr='stroke-color' scope='cols' value='#e6e6e6' />
+            <format attr='line-visibility' scope='cols' value='on' />
+            <format attr='line-pattern-only' scope='cols' value='solid' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' value='70' />
+            <format attr='wrap' data-class='total' scope='rows' value='on' />
+            <format attr='text-orientation' data-class='total' scope='rows' value='0' />
+            <format attr='vertical-align' data-class='total' scope='rows' value='bottom' />
+            <format attr='wrap' data-class='subtotal' scope='cols' value='off' />
+            <format attr='vertical-align' data-class='subtotal' scope='cols' value='bottom' />
+            <format attr='font-size' data-class='subtotal' scope='cols' value='2' />
+            <format attr='wrap' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' value='on' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='10' />
+            <format attr='text-align' data-class='subtotal' scope='cols' value='left' />
+            <format attr='vertical-align' data-class='subtotal' scope='cols' value='center' />
+            <format attr='text-orientation' data-class='subtotal' scope='cols' value='-90' />
+            <format attr='text-orientation' data-class='total' scope='cols' value='90' />
+            <format attr='font-size' data-class='total' scope='cols' value='2' />
+            <format attr='wrap' data-class='subtotal' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' value='on' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' value='0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Calculation_25825343946747912:qk]' field-type='quantitative' max-size='1' min='1' min-size='0.01' type='quantsize' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' />
+              <size column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Calculation_25825343946747912:qk]' />
+              <tooltip column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:Calculation_1114992766603526144:qk]' />
+              <tooltip column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:years:nk]' />
+              <text column='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Confirmed:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Disease:&#9;</run>
+                <run bold='true'>&lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#898989'>Years of outbreak:   &lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[attr:years:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Confirmed Cases:&#9;</run>
+                <run bold='true'>&lt;[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Confirmed:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-color' value='#59a14f' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#898989' />
+                <format attr='mark-transparency' value='198' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='490' />
+                <format attr='maxwidth' value='490' />
+                <format attr='minheight' value='700' />
+                <format attr='maxheight' value='700' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='on' />
+                <format attr='line-pattern-only' value='solid' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[Multiple Values]</rows>
+        <cols>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]</cols>
+        <join-lod-exclude-overrides>
+          <column>[federated.1mw6tbj029eitb1altfmp0b8ev88].[Name]</column>
+        </join-lod-exclude-overrides>
+      </table>
+      <simple-id uuid='{FD21E312-BE66-4B67-8E6A-F3ECF4DDE0B7}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <repository-location derived-from='https://public.tableau.com/workbooks/nCov_Wuhan_2019/Dashboard1?rev=' id='30497455' path='/workbooks/nCov_Wuhan_2019' revision='' />
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ffffff' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone friendly-name='spread' h='97906' id='105' param='vert' type='layout-flow' w='67773' x='508' y='1047'>
+            <zone forceUpdate='true' h='5366' id='152' type='text' w='67011' x='889' y='1833'>
+              <formatted-text>
+                <run bold='true' fontsize='12'>Disease spread</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+                <format attr='background-color' value='#f5f5f5' />
+              </zone-style>
+            </zone>
+            <zone h='55235' id='106' name='coronaMap' show-title='false' w='67011' x='889' y='7199'>
+              <layout-cache minheight='221' minwidth='402' type-h='scalable' type-w='scalable' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone count='1' fixed-size='37' h='5890' id='148' is-fixed='true' name='coronaMap' name1='coronaDaily (2)' playctrls='0' synchronized='1' trailctrls='0' type='currpage' w='67011' x='889' y='62434'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='190' h='25916' id='107' is-fixed='true' name='coronaDaily (2)' show-title='false' w='67011' x='889' y='68324'>
+              <layout-cache minheight='159' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='22' h='3927' id='108' is-fixed='true' name='coronaDaily (2)' pane-specification-id='1' param='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' show-title='false' type='color' w='67011' x='889' y='94240'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#d4d4d4' />
+              <format attr='border-style' value='solid' />
+              <format attr='border-width' value='2' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone friendly-name='epidemics' h='97906' id='111' param='vert' type='layout-flow' w='31211' x='68281' y='1047'>
+            <zone fixed-size='401' h='52749' id='112' is-fixed='true' name='R0CFR' w='30577' x='68598' y='1701'>
+              <layout-cache minheight='219' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='2' />
+                <format attr='margin' value='0' />
+                <format attr='margin-bottom' value='2' />
+                <format attr='padding' value='3' />
+              </zone-style>
+            </zone>
+            <zone h='43849' id='115' name='epidemics' w='30577' x='68598' y='54450'>
+              <layout-cache has-max-size-h='true' maxheight='790' minheight='790' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#d4d4d4' />
+                <format attr='border-style' value='solid' />
+                <format attr='border-width' value='2' />
+                <format attr='margin' value='0' />
+                <format attr='margin-top' value='4' />
+                <format attr='padding' value='3' />
+              </zone-style>
+            </zone>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='5' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout active='true' name='Desktop'>
+          <zones>
+            <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+              <zone friendly-name='spread' h='98438' id='105' param='vert' type='layout-flow' w='68594' x='625' y='781'>
+                <zone fixed-size='35' forceUpdate='true' h='4199' id='151' is-fixed='true' type='text' w='67656' x='1094' y='1367'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Disease spread</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#f5f5f5' />
+                  </zone-style>
+                </zone>
+                <zone h='66213' id='106' name='coronaMap' show-title='false' w='67656' x='1094' y='5566'>
+                  <layout-cache minheight='22' minwidth='402' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone count='1' fixed-size='37' h='4394' id='148' is-fixed='true' name='coronaMap' name1='coronaDaily (2)' playctrls='0' synchronized='1' trailctrls='0' type='currpage' w='67656' x='1094' y='71779'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='192' h='19531' id='107' is-fixed='true' name='coronaDaily (2)' show-title='false' w='67656' x='1094' y='76173'>
+                  <layout-cache minheight='159' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='22' h='2929' id='108' is-fixed='true' name='coronaDaily (2)' pane-specification-id='1' param='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' show-title='false' type='color' w='67656' x='1094' y='95704'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#d4d4d4' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='2' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone friendly-name='epidemics' h='98438' id='111' param='vert' type='layout-flow' w='30156' x='69219' y='781'>
+                <zone fixed-size='513' h='50293' id='112' is-fixed='true' name='R0CFR' w='29374' x='69610' y='1269'>
+                  <layout-cache minheight='208' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='0' />
+                    <format attr='margin-bottom' value='2' />
+                    <format attr='padding' value='3' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='476' h='46875' id='115' is-fixed='true' name='epidemics' w='29374' x='69610' y='51562'>
+                  <layout-cache has-max-size-h='true' maxheight='760' minheight='760' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='0' />
+                    <format attr='margin-top' value='4' />
+                    <format attr='padding' value='3' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='5' />
+                </zone-style>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+        <devicelayout name='Tablet'>
+          <size sizing-mode='automatic' />
+          <zones>
+            <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+              <zone friendly-name='spread' h='97916' id='105' param='vert' type='layout-flow' w='67406' x='781' y='1042'>
+                <zone h='5339' id='153' type='text' w='66234' x='1367' y='1823'>
+                  <formatted-text>
+                    <run bold='true' fontsize='12'>Disease spread</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#e6e6e6' />
+                  </zone-style>
+                </zone>
+                <zone h='55336' id='106' name='coronaMap' show-title='false' w='66234' x='1367' y='7162'>
+                  <layout-cache minheight='221' minwidth='402' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone count='1' fixed-size='37' h='5860' id='148' is-fixed='true' name='coronaMap' name1='coronaDaily (2)' playctrls='0' synchronized='1' trailctrls='0' type='currpage' w='66234' x='1367' y='62498'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='166' h='22657' id='107' is-fixed='true' name='coronaDaily (2)' show-title='false' w='66234' x='1367' y='68358'>
+                  <layout-cache minheight='159' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='47' h='7162' id='108' is-fixed='true' leg-item-layout='grid' name='coronaDaily (2)' pane-specification-id='1' param='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' show-title='false' type='color' w='66234' x='1367' y='91015'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#d4d4d4' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='2' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone friendly-name='epidemics' h='97916' id='111' param='vert' type='layout-flow' w='31032' x='68187' y='1042'>
+                <zone fixed-size='352' h='46093' id='112' is-fixed='true' name='R0CFR' w='30056' x='68675' y='1693'>
+                  <layout-cache minheight='208' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='0' />
+                    <format attr='margin-bottom' value='2' />
+                    <format attr='padding' value='3' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='384' h='50521' id='115' is-fixed='true' name='epidemics' w='30056' x='68675' y='47786'>
+                  <layout-cache has-max-size-h='true' maxheight='781' minheight='781' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='0' />
+                    <format attr='margin-top' value='4' />
+                    <format attr='padding' value='3' />
+                  </zone-style>
+                </zone>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='5' />
+                </zone-style>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+        <devicelayout name='Phone'>
+          <size maxheight='1315' minheight='1315' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='150' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98784' id='149' param='vert' type='layout-flow' w='97602' x='1199' y='608'>
+                <zone fixed-size='328' h='25551' id='106' is-fixed='true' name='coronaMap' w='97602' x='1199' y='608'>
+                  <layout-cache minheight='261' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone count='1' fixed-size='53' h='4638' id='148' is-fixed='true' name='coronaMap' name1='coronaDaily (2)' playctrls='0' synchronized='1' trailctrls='0' type='currpage' w='97602' x='1199' y='26159'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='21712' id='107' name='coronaDaily (2)' show-title='false' w='97602' x='1199' y='30797'>
+                  <layout-cache minheight='159' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='263' h='20608' id='115' is-fixed='true' name='epidemics' w='97602' x='1199' y='52509'>
+                  <layout-cache has-max-size-h='true' maxheight='790' minheight='790' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='26275' id='112' name='R0CFR' w='97602' x='1199' y='73117'>
+                  <layout-cache minheight='219' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9AF1C653-DE71-4038-9A16-7651FFA5411D}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='69'>
+    <window class='worksheet' name='coronaMap'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='2147483647'>
+            <card pane-specification-id='1' param='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>1</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Confirmed:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Province/State:nk]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[yr:Last Update:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{8564CBF2-3EA1-44C9-A86A-80EC8BA0FFF7}' />
+    </window>
+    <window class='worksheet' name='coronaDaily (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+            <card pane-specification-id='1' param='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>101</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_897342240786980869:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[tdy:Date:qk]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[tdy:Last Update:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[tdy:Last Update:qk]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[tyr:Calculation_679762083920781312:qk]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[yr:Date:ok]</field>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[yr:Last Update:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5489ED2E-D8AF-4745-BAB6-ADDC56D6F6C2}' />
+    </window>
+    <window class='worksheet' name='epidemics'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='measures' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card pane-specification-id='5' param='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[max:Calculation_25825343946747912:qk]' type='size' />
+            <card param='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' type='highlighter' />
+            <card pane-specification-id='5' param='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Calculation_1413285872440422404:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[:Measure Names]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[md:date:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Calculation_1114992766603526144:qk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Calculation_25825343933751301:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Epidemy:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Start_date:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:start_year:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:start_year:qk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:years:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:CFR:qk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[sum:Confirmed:qk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[tyr:Calculation_1114992766603526144:qk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{95C86577-7158-4A67-82C3-8C659D2CB6E3}' />
+    </window>
+    <window class='worksheet' name='R0CFR'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='5' param='[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[md:Date:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[md:date:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:CFR:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Epidemy:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:Name:nk]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[none:R0:ok]</field>
+            <field>[federated.1kljxw91d6e7rb1e6xtij0yi2tc3].[yr:date:ok]</field>
+            <field>[federated.1mw6tbj029eitb1altfmp0b8ev88].[none:Name:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{DD546535-1FC3-4BCA-9E4A-DE32A39FE3A0}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='R0CFR'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='coronaDaily (2)'>
+          <current-page>
+            <multibucket>
+              <bucket>60</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='fit-height' />
+          <highlight field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]&#10;[federated.04iciev0k1p29b17xwqog0xkluhs].[:Measure Names]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='coronaMap'>
+          <current-page>
+            <multibucket>
+              <bucket>60</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+          <highlight field='[federated.04iciev0k1p29b17xwqog0xkluhs].[none:Epidemy:nk]'>
+            <bucket-selection />
+          </highlight>
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+        <viewpoint name='epidemics'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <device-preview mobileapp-chrome-visible='false' visible='true'>
+        <device is-portrait='false' name='Medium Desktop Monitor' type='Desktop' />
+        <device name='Generic Tablet' type='Tablet' />
+        <device is-portrait='false' name='iPhone 6, 6s, 7, 8' type='Phone' />
+      </device-preview>
+      <simple-id uuid='{A4B26F13-5967-4E42-9648-59FEF373103F}' />
+    </window>
+  </windows>
+</workbook>

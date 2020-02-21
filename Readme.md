@@ -10,6 +10,8 @@ Table of Contents
 
   * [Motivation](#motivation)
   * [Code overview](#code-overview)
+    * [Python](#python)
+    * [Tableau](#tableau)
 
 Motivation
 -----------
@@ -31,6 +33,8 @@ which estimates the future spread of diseases. This data is still to be included
 Code overview
 -----
 
+### Python
+
 * **scripts/** includes:
   * update.py - updates data for the dashboard;
   * epirisk_history.py - provides the EpiRisk.net platform with data from every day of Covid-19 epidemy and gathers the results.
@@ -41,3 +45,7 @@ Code overview
   * spreadsheets.py -  accessing Google Sheets;
   * epirisk.py - querying EpiRisk.net with a given epidemic state.
   
+### Tableau
+
+* nCov_Wuhan_2019.twbx - is a Tableau file containing the workbook and data extracts; can be opened with Tableau Public.
+* nCov_Wuhan_2019.twb - is a Tableau file containing only the workbook in a readable form; can be opened only with Tableau Desktop. 
