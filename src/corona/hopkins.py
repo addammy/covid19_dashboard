@@ -10,11 +10,11 @@ _TIMESERIES_FIXED_COLS = 4
 _URL_PREFIX = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
 _SERIES = {
     'Confirmed':
-        _URL_PREFIX+'time_series_19-covid-Confirmed.csv',
+        _URL_PREFIX + 'time_series_19-covid-Confirmed.csv',
     'Deaths':
-        _URL_PREFIX+'time_series_19-covid-Deaths.csv',
+        _URL_PREFIX + 'time_series_19-covid-Deaths.csv',
     'Recovered':
-        _URL_PREFIX+'time_series_19-covid-Recovered.csv'
+        _URL_PREFIX + 'time_series_19-covid-Recovered.csv'
 }
 
 
@@ -27,6 +27,7 @@ def _get_category_df(value_name, url):
                   var_name='Date', value_name=value_name)
 
     df2.dropna(subset=[value_name], inplace=True)
+    df2 = df2[df2[value_name] > 0]
 
     df2['Date'] = df2['Date'].apply(lambda x: dateparser.parse(x).strftime('%Y-%m-%d'))
 
@@ -46,5 +47,7 @@ def get_cases_as_df():
     worksheets = [_get_category_df(value_name, url) for (value_name, url) in _SERIES.items()]
     df = reduce(partial(pd.merge, how='outer', on=list(worksheets[0].columns[:(_TIMESERIES_FIXED_COLS + 1)])),
                 worksheets)
+    for value_name in _SERIES:
+        df[value_name].fillna(0, inplace=True)
     df['Epidemy'] = 'Corona'
     return df

@@ -125,13 +125,19 @@ class EpiriskQuery:
                     return
                 else:
                     raise
-
-        self.cases[key] = int(value)
+        if value == 0:
+            if key in self.cases:
+                del self.cases[key]
+        else:
+            self.cases[key] = int(value)
 
     def __getitem__(self, item):
         if isinstance(item, str):
-            item = self.locations[item].id
-        return self.cases[item]
+            if item in self.locations:
+                item = self.locations[item].id
+            else:
+                item = -1
+        return self.cases.get(item, 0)
 
     def build_query(self, **kwargs):
         """
@@ -209,7 +215,7 @@ def setup_epirisk(cases_df, mute=True):
     cases = cases[['Confirmed']].reset_index()
     epirisk = EpiriskQuery(mute=mute)
     for country, count in cases.itertuples(False):
-        epirisk[country] = count
+        epirisk[country] += count
     return epirisk
 
 
@@ -232,7 +238,8 @@ def adjust_country_names(country_names: pd.Series):
         'US': 'United States of America',
         'Russia': 'Russian Federation',
         'UK': 'United Kingdom',
-        'Egypt': 'Egypt, Arab Rep.'
+        'Egypt': 'Egypt, Arab Rep.',
+        'North Macedonia': 'Macedonia'
     }
 
     return country_names.replace(mapping)
