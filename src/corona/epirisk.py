@@ -1,4 +1,5 @@
 import json
+from io import StringIO
 from base64 import b64encode
 from collections import namedtuple
 from dataclasses import dataclass
@@ -7,6 +8,7 @@ from typing import List, Dict, Set
 
 import pandas as pd
 import requests
+import country_converter as coco
 
 _months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 Location = namedtuple('Location', 'id label lat lng population')
@@ -75,7 +77,7 @@ class ConnectionsRisk:
         for country_id, risk in self.distribution.items():
             data.append([country_id, countries_by_id[country_id].label, risk])
 
-        df = pd.DataFrame(data, columns=['country_id', 'country_name', 'risk'])
+        df = pd.DataFrame(data, columns=['CountryId', 'Country', 'Risk'])
         return df
 
 
@@ -114,6 +116,13 @@ class EpiriskQuery:
         self.month = month
         self.travel_level = travel_level
         self.mute = mute
+
+    @staticmethod
+    def from_cases(cases, mute):
+        epirisk = EpiriskQuery(mute=mute)
+        for country, count in cases.itertuples(False):
+            epirisk[country] += count
+        return epirisk
 
     def __setitem__(self, key, value):
         if isinstance(key, str):
@@ -197,7 +206,21 @@ def query_epirisk(cases, mute=True):
 
     exported = epirisk.get_exported_cases()
 
-    return connections_df, distribution_df, exported
+    latest_cases_df = latest_cases_per_country(cases)
+
+    # Join risk and cases
+    risk_cases_df = pd.merge(distribution_df[['Country', 'Risk']],
+                             latest_cases_df[['Country', 'Confirmed']],
+                             on='Country', how='outer')
+    risk_cases_df['Confirmed'] = risk_cases_df['Confirmed'].fillna(0)
+    risk_cases_df['Risk'] = risk_cases_df['Risk'].fillna(1)
+    # Correct country names
+    risk_cases_df = assign_country_codes(risk_cases_df)
+    # Assign polish names
+    iso_pl_df = pd.read_csv(StringIO(read_text("corona.resources", "ISO3_pl.csv")))
+    risk_cases_df = pd.merge(risk_cases_df, iso_pl_df, how='left', on='Country_ISO3')
+
+    return connections_df, distribution_df, exported, risk_cases_df
 
 
 def setup_epirisk(cases_df, mute=True):
@@ -209,14 +232,16 @@ def setup_epirisk(cases_df, mute=True):
     :param mute: bool, if True then no exception is thrown if data for missing country is added
     :return: EpiriskQuery, query object initiated with the current state of the epidemy
     """
+    return EpiriskQuery.from_cases(latest_cases_per_country(cases_df), mute)
+
+
+def latest_cases_per_country(cases_df: pd.DataFrame):
     cases = cases_df[cases_df['Date'] == cases_df['Date'].max()].copy()
     cases['Country/Region'] = adjust_country_names(cases['Country/Region'])
     cases = cases.groupby('Country/Region').sum()
     cases = cases[['Confirmed']].reset_index()
-    epirisk = EpiriskQuery(mute=mute)
-    for country, count in cases.itertuples(False):
-        epirisk[country] += count
-    return epirisk
+    cases.rename(columns={'Country/Region': 'Country'}, inplace=True)
+    return cases
 
 
 def adjust_country_names(country_names: pd.Series):
@@ -243,3 +268,34 @@ def adjust_country_names(country_names: pd.Series):
     }
 
     return country_names.replace(mapping)
+
+
+def assign_country_codes(df):
+    correct_codes_dict = {
+        'UK': 'GBR',
+        'XKX': 'KOS',
+        'North Ireland': 'UK',
+        'ALA': 'FIN'
+    }
+    correct_names_dict = {
+        'North Ireland': 'UK',
+        'Aland Islands': 'Finland'
+    }
+    country_names = df.loc[:, 'Country'].to_list()
+    country_names = [correct_names_dict.get(cn, cn) for cn in country_names]
+    country_codes = coco.convert(names=country_names, to='ISO3', not_found=None)
+    country_codes = [correct_codes_dict.get(cc, cc) for cc in country_codes]
+    df['Country_ISO3'] = country_codes
+    df['Country'] = country_names
+    return df
+
+
+def risk_cases_alteration(risk_cases_df):
+    altered = risk_cases_df.copy()
+    indonesia = altered['Country'] == 'Indonesia'
+    altered.loc[indonesia, 'Risk'] = 0.0
+
+    at_risk = altered['Risk'] < 1
+    altered.loc[at_risk, 'Risk'] = altered[at_risk].Risk / altered[at_risk].Risk.sum()
+
+    return altered

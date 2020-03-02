@@ -52,7 +52,8 @@ final_df, sars_df = sars_progress(cases_df)
 # - to compare parameters of various epidemics:
 epidemic_days = epidemic_summaries(cases_df, sheets.get_spreadsheet(sheet_ids['EXPORT_EPIDEMIC_DAYS']))
 # - to predict how the current epidemic might keep spreading:
-connections_df, distribution_df, exported_df = query_epirisk(cases_df)
+connections_df, distribution_df, exported_df, risk_cases_df = query_epirisk(cases_df)
+
 
 # Save data in Google Sheets for Tableau to use:
 sheets.save_df_to_spreadsheet(cases_df, sheet_ids['EXPORT_FOR_TABLEAU'])
@@ -60,3 +61,4 @@ sheets.save_df_to_spreadsheet(epidemic_days, sheet_ids['EXPORT_EPIDEMIC_DAYS'])
 sheets.save_df_to_spreadsheet(final_df, sheet_ids['EXPORT_FOR_TABLEAU_WITH_SARS'])
 sheets.save_df_to_spreadsheet(connections_df, sheet_ids['EXPORT_CONNECTIONS'])
 sheets.save_df_to_spreadsheet(distribution_df, sheet_ids['EXPORT_RISKS'])
+sheets.save_df_to_spreadsheet(risk_cases_df, sheet_ids['EXPORT_RISK_CASES'])

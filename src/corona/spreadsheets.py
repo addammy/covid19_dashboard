@@ -35,7 +35,7 @@ class SpreadsheetsHandler:
         """
         return self.client.open_by_key(key)
 
-    def save_df_to_spreadsheet(self, df: pd.DataFrame, key: str = None,
+    def save_df_to_spreadsheet(self, df: pd.DataFrame, key: str = None, worksheet_no=0,
                                *, spreadsheet=None, new_worksheet=False) -> None:
         """
         Writes df to given spreadsheet. Target worksheet is cleared of all preexisting data.
@@ -43,6 +43,7 @@ class SpreadsheetsHandler:
 
         :param df: DataFrame to be written
         :param key: Google Sheet key
+        :param worksheet:
         :param spreadsheet: gspread Spreadsheet object
         :param new_worksheet: bool, if False, then df is written in the first worksheet. If true, then new worksheet
         with current time (ns since Epoch) is created.
@@ -55,7 +56,7 @@ class SpreadsheetsHandler:
         if new_worksheet:
             worksheet = spreadsheet.add_worksheet(str(time.time_ns()), rows, cols)
         else:
-            worksheet = spreadsheet.worksheets()[0]
+            worksheet = spreadsheet.worksheets()[worksheet_no]
         if self.api_write:
             worksheet.clear()
         cells = worksheet.range(1, 1, rows, cols)

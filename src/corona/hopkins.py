@@ -28,6 +28,7 @@ def _get_category_df(value_name, url):
 
     df2.dropna(subset=[value_name], inplace=True)
     df2 = df2[df2[value_name] > 0]
+    df2[value_name] = df2[value_name].astype('Int64')
 
     df2['Date'] = df2['Date'].apply(lambda x: dateparser.parse(x).strftime('%Y-%m-%d'))
 
