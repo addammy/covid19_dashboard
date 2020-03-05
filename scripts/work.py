@@ -43,6 +43,3 @@ cases_df = get_cases_as_df()
 
 connections_df, distribution_df, exported_df, risk_cases_df = query_epirisk(cases_df)
 sheets.save_df_to_spreadsheet(risk_cases_df, sheet_ids['EXPORT_RISK_CASES'])
-
-altered_risk_cases_df = risk_cases_alteration(risk_cases_df)
-sheets.save_df_to_spreadsheet(altered_risk_cases_df, sheet_ids['EXPORT_RISK_CASES'], 1)

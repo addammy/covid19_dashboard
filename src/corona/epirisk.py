@@ -289,13 +289,3 @@ def assign_country_codes(df):
     df['Country'] = country_names
     return df
 
-
-def risk_cases_alteration(risk_cases_df):
-    altered = risk_cases_df.copy()
-    indonesia = altered['Country'] == 'Indonesia'
-    altered.loc[indonesia, 'Risk'] = 0.0
-
-    at_risk = altered['Risk'] < 1
-    altered.loc[at_risk, 'Risk'] = altered[at_risk].Risk / altered[at_risk].Risk.sum()
-
-    return altered
