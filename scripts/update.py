@@ -8,6 +8,7 @@ src_dir = parent_dir / '../src'
 sys.path.insert(0, str(src_dir))
 
 from corona.comparisons import epidemic_summaries, sars_progress
+from corona.statistics import get_big_numbers
 from corona.epirisk import query_epirisk
 from corona.hopkins import get_cases_as_df
 from corona.spreadsheets import SpreadsheetsHandler
@@ -53,6 +54,8 @@ final_df, sars_df = sars_progress(cases_df)
 epidemic_days = epidemic_summaries(cases_df, sheets.get_spreadsheet(sheet_ids['EXPORT_EPIDEMIC_DAYS']))
 # - to predict how the current epidemic might keep spreading:
 connections_df, distribution_df, exported_df, risk_cases_df = query_epirisk(cases_df)
+# - to get current statistics
+big_numbers_df = get_big_numbers(cases_df)
 
 
 # Save data in Google Sheets for Tableau to use:
@@ -62,3 +65,4 @@ sheets.save_df_to_spreadsheet(final_df, sheet_ids['EXPORT_FOR_TABLEAU_WITH_SARS'
 sheets.save_df_to_spreadsheet(connections_df, sheet_ids['EXPORT_CONNECTIONS'])
 sheets.save_df_to_spreadsheet(distribution_df, sheet_ids['EXPORT_RISKS'])
 sheets.save_df_to_spreadsheet(risk_cases_df, sheet_ids['EXPORT_RISK_CASES'])
+sheets.save_df_to_spreadsheet(big_numbers_df, sheet_ids['EXPORT_BIG_NUMBERS'])
