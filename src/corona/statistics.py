@@ -4,7 +4,8 @@ import pycountry_convert as pc
 
 
 countries_replacer = {'Mainland China':'China', 'UK':'United Kingdom',
-                      'US':'United States of America', 'Republic of Ireland': 'Ireland'}
+                      'US':'United States of America', 'Republic of Ireland': 'Ireland',
+                      'Slovakia': 'Slovak Republic'}
 
 
 def get_big_numbers(cases_df):

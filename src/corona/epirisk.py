@@ -232,6 +232,7 @@ def setup_epirisk(cases_df, mute=True):
     :param mute: bool, if True then no exception is thrown if data for missing country is added
     :return: EpiriskQuery, query object initiated with the current state of the epidemy
     """
+
     return EpiriskQuery.from_cases(latest_cases_per_country(cases_df), mute)
 
 
@@ -264,7 +265,11 @@ def adjust_country_names(country_names: pd.Series):
         'Russia': 'Russian Federation',
         'UK': 'United Kingdom',
         'Egypt': 'Egypt, Arab Rep.',
-        'North Macedonia': 'Macedonia'
+        'North Macedonia': 'Macedonia',
+        'Faroe Islands': 'Faeroe Islands',
+        'Republic of Ireland': 'Ireland',
+        'Saint Barthelemy': 'St-Barthélemy',
+        'Slovakia': 'Slovak Republic'
     }
 
     return country_names.replace(mapping)
