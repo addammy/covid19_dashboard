@@ -5,7 +5,11 @@ import pycountry_convert as pc
 
 countries_replacer = {'Mainland China':'China', 'UK':'United Kingdom',
                       'US':'United States of America', 'Republic of Ireland': 'Ireland',
-                      'Slovakia': 'Slovak Republic'}
+                      'Slovakia': 'Slovak Republic', 'occupied Palestinian territory': 'Palestine',
+                      'Taipei and environs': 'Taiwan', 'Republic of Korea': 'South Korea',
+                      'Macao SAR': 'Macao', 'Iran (Islamic Republic of)': 'Iran',
+                      'Hong Kong SAR': 'Hong Kong', 'Holy See': 'Holy See (Vatican City State)'
+                      }
 
 
 def get_big_numbers(cases_df):
@@ -47,13 +51,17 @@ def get_continent(country):
     try:
         if country in ['Others','Saint Barthelemy']:
             return 'Other'
-        elif country in ['Vatican City']:
+        elif country in ['Vatican City', 'Holy See', 'Channel Islands', 'Holy See (Vatican City State)']:
             return 'EU'
         else:
             country_code = pc.country_name_to_country_alpha2(country)
             continent_name = pc.country_alpha2_to_continent_code(country_code)
             return continent_name
     except TypeError as e:
+        print(e)
+        print(country)
+        return
+    except KeyError as e:
         print(e)
         print(country)
         return
