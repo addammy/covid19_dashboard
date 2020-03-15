@@ -4,10 +4,12 @@ import dateparser
 import numpy as np
 import pandas as pd
 
-# How many columns in the time series data, before the time series columns begin.
+# How many columns in the time series data, before the time series
+# columns begin.
 _TIMESERIES_FIXED_COLS = 4
 
-_URL_PREFIX = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/'
+_URL_PREFIX = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/' \
+              'master/csse_covid_19_data/csse_covid_19_time_series/'
 _SERIES = {
     'Confirmed':
         _URL_PREFIX + 'time_series_19-covid-Confirmed.csv',
@@ -20,7 +22,8 @@ _SERIES = {
 
 def _get_category_df(value_name, url):
     df = pd.read_csv(url)
-    dates = pd.Series([np.datetime64(dateparser.parse(s)) for s in df.columns[_TIMESERIES_FIXED_COLS:]])
+    dates = pd.Series([np.datetime64(dateparser.parse(s)) for s
+                       in df.columns[_TIMESERIES_FIXED_COLS:]])
     dates = pd.Series(dates).dt.normalize().drop_duplicates(keep='last')
     df2 = pd.melt(df, id_vars=df.columns[:_TIMESERIES_FIXED_COLS],
                   value_vars=df.columns[_TIMESERIES_FIXED_COLS + dates.index],
@@ -30,7 +33,8 @@ def _get_category_df(value_name, url):
     df2 = df2[df2[value_name] > 0]
     df2[value_name] = df2[value_name].astype('Int64')
 
-    df2['Date'] = df2['Date'].apply(lambda x: dateparser.parse(x).strftime('%Y-%m-%d'))
+    df2['Date'] = df2['Date'].apply(lambda x:
+                                    dateparser.parse(x).strftime('%Y-%m-%d'))
 
     columns = list(df2.columns)
     df2.columns = columns
@@ -40,14 +44,18 @@ def _get_category_df(value_name, url):
 
 def get_cases_as_df():
     """
-    Retrieves the Confirmed, Deaths and Recovered time series from the csv files provided by JHU CSSE on GitHub. Joins
+    Retrieves the Confirmed, Deaths and Recovered time series from the csv
+    files provided by JHU CSSE on GitHub. Joins
     the information into a single dataframe.
 
-    :return: dataframe, each row describes the situation per country/province and day.
+    :return: dataframe, each row describes the situation per
+    country/province and day.
     """
-    worksheets = [_get_category_df(value_name, url) for (value_name, url) in _SERIES.items()]
-    df = reduce(partial(pd.merge, how='outer', on=list(worksheets[0].columns[:(_TIMESERIES_FIXED_COLS + 1)])),
-                worksheets)
+    worksheets = [_get_category_df(value_name, url)
+                  for (value_name, url) in _SERIES.items()]
+    df = reduce(partial(
+        pd.merge, how='outer', on=list(
+            worksheets[0].columns[:(_TIMESERIES_FIXED_COLS + 1)])), worksheets)
     for value_name in _SERIES:
         df[value_name].fillna(0, inplace=True)
     df['Epidemy'] = 'Corona'

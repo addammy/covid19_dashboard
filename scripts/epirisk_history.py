@@ -15,7 +15,8 @@ for name, group in cases_df.groupby('Date'):
     print(name)
     epirisk = setup_epirisk(group)
     risks = epirisk.get_risk()
-    max_30 = sorted(risks.distribution.keys(), key=risks.distribution.get, reverse=True)[:30]
+    max_30 = sorted(risks.distribution.keys(), key=risks.distribution.get,
+                    reverse=True)[:30]
     exported_cases = epirisk.get_exported_cases()
     exported_top_30 = epirisk.get_exported_case_per_target(max_30)
     results[name] = {

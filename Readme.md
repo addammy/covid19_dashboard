@@ -29,11 +29,14 @@ Steps we had to take to create the dashboard include:
 2. Scraping the WHO website;
 3. Cleaning the data;
 4. Feeding the data to epirisk.net platform to estimate the future spread of the disease;
-5. Saving the data to Google Sheets;
-6. Creating the dashboard in Tableau.
+5. Combining result data with auxilary data (countries' population,  ISO standards)
+6. Calculating new parameters
+7. Saving the data to Google Sheets;
+8. Creating the dashboard in Tableau.
 
-This repository shows the final version of steps 1. and 5. as well as  4. scripts used to download data from the EpiRisk.net platform. Soon it will also include steps 2. and 3.
-
+This repository shows the final version of steps 1. and 3-8. 
+Step 2. will be soon included as well. 
+ 
 Code overview
 -----
 
@@ -41,13 +44,14 @@ Code overview
 
 * **scripts/** includes:
   * update.py - updates data for the dashboard;
-  * epirisk_history.py - provides the EpiRisk.net platform with data from every day of Covid-19 epidemy and gathers the results.
+  * epirisk_history.py - provides the EpiRisk.net platform with data from every day of Covid-19 epidemic and gathers the results.
 
 * **src/** contains the corona package with:
   * hopkins.py - downloading the data from JHU repository;
   * comparisons.py - joining the data from previous epidemics;
   * spreadsheets.py -  accessing Google Sheets;
-  * epirisk.py - querying EpiRisk.net with a given epidemic state.
+  * epirisk.py - querying EpiRisk.net with a given epidemic state; combining results with other data
+  * statistics - calculating top level statistics
   
 ### Tableau
 
