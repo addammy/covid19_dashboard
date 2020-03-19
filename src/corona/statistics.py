@@ -1,7 +1,4 @@
-import pandas as pd
-from importlib import resources
-import pycountry_convert as pc
-
+from corona.countries import join_countries_data
 
 countries_replacer = {'Mainland China': 'China',
                       'UK': 'United Kingdom',
@@ -35,8 +32,8 @@ def get_big_numbers(cases_df):
              Recovered for each Region and Date
     """
     df = prepare_cases(cases_df)
-    df['Continent'] = df['Country'].apply(get_continent)
-    df_eu = df[df.Continent == 'EU']
+    df = join_countries_data(df, ['continent', 'name_short'])
+    df_eu = df[df.continent == 'Europe']
     big_numbers = get_region_numbers(df, 'World').append(
         get_region_numbers(df_eu, 'EU'), sort=True)
     return big_numbers
@@ -55,36 +52,8 @@ def get_region_numbers(df, region):
     """
     region_numbers = df.groupby('Date').sum().reset_index()
     region_numbers['Region'] = region
-    region_numbers['Countries'] = df.groupby('Date').count(
-                                         ).reset_index()['Country']
+    region_numbers['Countries'] = df.groupby('Date').count().reset_index()['name_short']
     return region_numbers
-
-
-def get_continent(country):
-    """
-    Returns continent for a given country.
-
-    :param country: String with full name of the country.
-    :return: String with two-letter continent code.
-    """
-    try:
-        if country in ['Others', 'Saint Barthelemy']:
-            return 'Other'
-        elif country in ['Vatican City', 'Holy See', 'Channel Islands',
-                         'Holy See (Vatican City State)']:
-            return 'EU'
-        else:
-            country_code = pc.country_name_to_country_alpha2(country)
-            continent_name = pc.country_alpha2_to_continent_code(country_code)
-            return continent_name
-    except TypeError as e:
-        print(e)
-        print(country)
-        return
-    except KeyError as e:
-        print(e)
-        print(country)
-        return
 
 
 def prepare_cases(df):
@@ -98,13 +67,7 @@ def prepare_cases(df):
     cases_df['Confirmed'] = cases_df.Confirmed.astype(int)
     cases_df['Deaths'] = cases_df['Deaths'].astype(int)
     cases_df['Recovered'] = cases_df['Recovered'].astype(int)
-    cases_df = cases_df[['Country/Region',
-                         'Confirmed', 'Deaths', 'Recovered',
-                         'Date']].groupby(['Country/Region', 'Date']
-                                          ).sum().reset_index()
-    cases_df['Country'] = cases_df[
-        'Country/Region'].replace(countries_replacer)
-    cases_df = cases_df.drop('Country/Region', axis=1)
+    cases_df = cases_df[
+        ['ISO3', 'Confirmed', 'Deaths', 'Recovered', 'Date']
+    ].dropna().groupby(['ISO3', 'Date']).sum().reset_index()
     return cases_df
-
-

@@ -46,18 +46,17 @@ sheet_ids = config['SPREADSHEETS']
 
 # Acquire current data
 cases_df = get_cases_as_df()
-population_sheet = sheets.get_spreadsheet(sheet_ids['POPULATION_SHEET'])
 
 # Create data for particular Tableau worksheets:
 
 # - to compare epidemic progress with SARS:
 final_df, sars_df = sars_progress(cases_df)
 # - to compare parameters of various epidemics:
-epidemic_days = epidemic_summaries(cases_df, sheets.get_spreadsheet(
+epidemic_days = epidemic_summaries(cases_df,sheets.get_spreadsheet(
     sheet_ids['EXPORT_EPIDEMIC_DAYS']))
 # - to predict how the current epidemic might keep spreading:
-connections_df, distribution_df, exported_df, risk_cases_df = query_epirisk(
-    cases_df, population_sheet)
+connections_df, distribution_df, exported_df, risk_cases_df = \
+    query_epirisk(cases_df)
 # - to get current statistics
 big_numbers_df = get_big_numbers(cases_df)
 

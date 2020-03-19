@@ -6,6 +6,8 @@ import pandas as pd
 
 # How many columns in the time series data, before the time series
 # columns begin.
+from corona.countries import add_ISO3_from_name
+
 _TIMESERIES_FIXED_COLS = 4
 
 _URL_PREFIX = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/' \
@@ -22,8 +24,9 @@ _SERIES = {
 
 def _get_category_df(value_name, url):
     df = pd.read_csv(url)
-    dates = pd.Series([np.datetime64(dateparser.parse(s)) for s
-                       in df.columns[_TIMESERIES_FIXED_COLS:]])
+    # dates = pd.Series([np.datetime64(dateparser.parse(s)) for s in df.columns[_TIMESERIES_FIXED_COLS:]])
+    dates = pd.to_datetime(df.columns[_TIMESERIES_FIXED_COLS:],
+                           format='%m/%d/%y')
     dates = pd.Series(dates).dt.normalize().drop_duplicates(keep='last')
     df2 = pd.melt(df, id_vars=df.columns[:_TIMESERIES_FIXED_COLS],
                   value_vars=df.columns[_TIMESERIES_FIXED_COLS + dates.index],
@@ -33,11 +36,8 @@ def _get_category_df(value_name, url):
     df2 = df2[df2[value_name] > 0]
     df2[value_name] = df2[value_name].astype('Int64')
 
-    df2['Date'] = df2['Date'].apply(lambda x:
-                                    dateparser.parse(x).strftime('%Y-%m-%d'))
-
-    columns = list(df2.columns)
-    df2.columns = columns
+    # df2['Date'] = df2['Date'].apply(lambda x:dateparser.parse(x).strftime('%Y-%m-%d'))
+    df2['Date'] = pd.to_datetime(df2['Date'], format='%m/%d/%y').dt.strftime('%Y-%m-%d')
 
     return df2
 
@@ -53,10 +53,10 @@ def get_cases_as_df():
     """
     worksheets = [_get_category_df(value_name, url)
                   for (value_name, url) in _SERIES.items()]
-    df = reduce(partial(
-        pd.merge, how='outer', on=list(
-            worksheets[0].columns[:(_TIMESERIES_FIXED_COLS + 1)])), worksheets)
+    merge_columns = list(worksheets[0].columns[:(_TIMESERIES_FIXED_COLS + 1)])
+    df = reduce(partial(pd.merge, how='outer', on=merge_columns), worksheets)
     for value_name in _SERIES:
         df[value_name].fillna(0, inplace=True)
     df['Epidemy'] = 'Corona'
+    add_ISO3_from_name(df, 'Country/Region', 'Other')
     return df
