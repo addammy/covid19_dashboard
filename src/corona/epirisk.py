@@ -172,11 +172,24 @@ class EpiriskQuery:
         "travel_level":1,
         "userdata":{}}
         """
+        KEEP_TOP_CASES_COUNT=117
+        limited_cases = dict(
+            sorted(self.cases.items(), key=lambda t: t[1])[
+            -KEEP_TOP_CASES_COUNT:]
+        )
+        if len(limited_cases) < len(self.cases):
+            print(
+                f"Keeping only top {KEEP_TOP_CASES_COUNT} case entries due to Epirisk limits.")
+
+        # Eliminate non-countries from query response:
+        limited_cases[53] = 0  # Northern Cyprus
+        limited_cases[4] = 0  # Aland islands
+
         query = dict(
-            geolevel=self.geolevel,
+            geolevel='country',
             period=self.period,
-            sources=list(self.cases.keys()),
-            cases=self.cases,
+            sources=list(limited_cases.keys()),
+            cases=limited_cases,
             month=_months[self.month - 1],
             travel_level=self.travel_level,
             userdata={},
