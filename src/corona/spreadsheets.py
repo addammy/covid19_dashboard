@@ -69,9 +69,12 @@ class SpreadsheetsHandler:
         cells = worksheet.range(1, 1, rows, cols)
         types = set()
         for cell, val in zip(cells, itertools.chain(list(df.columns),
-                             df.fillna('').to_numpy().flatten())):
+                             df.to_numpy().flatten())):
             types.add(type(val))
-            if type(val) in (int, float, str):
+
+            if pd.isna(val):
+                cell.value = ''
+            elif type(val) in (int, float, str):
                 cell.value = val
             else:
                 cell.value = str(val)

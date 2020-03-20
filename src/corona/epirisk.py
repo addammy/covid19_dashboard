@@ -256,6 +256,7 @@ def query_epirisk(cases, *, mute=True):
                              on='ISO3', how='outer')
     risk_cases_df['Confirmed'] = risk_cases_df['Confirmed'].fillna(0)
     risk_cases_df['Risk'] = risk_cases_df['Risk'].fillna(1)
+    risk_cases_df = normalize_risk_cases(risk_cases_df)
 
     # TODO: Review
     # Correct country names
@@ -303,9 +304,12 @@ def query_epirisk(cases, *, mute=True):
     bins = [0, 2, 5, 10, 50, 100, 400, 5000]
     labels = ['0-2', '2-5', '5-10', '10-50', '50-100', '100-400', '>400']
 
-    risk_cases_ratio_df['bin'] = pd.cut(
-        risk_cases_ratio_df['per_mil'], bins=bins, labels=labels).astype(str)
+    risk_cases_ratio_df['bin']=''
+
     risk_cases_ratio_df = adds_bin_col(risk_cases_ratio_df)
+    risk_cases_ratio_df['bin'].where(risk_cases_ratio_df.Confirmed.astype(int)==0,
+        pd.cut(risk_cases_ratio_df['per_mil'], bins=bins, labels=labels).astype(str), inplace=True)
+
 
     return connections_df, distribution_df, exported, risk_cases_ratio_df
 
@@ -356,3 +360,14 @@ def latest_cases_per_country(cases_df: pd.DataFrame):
     cases = cases.groupby('ISO3').sum()
     cases = cases[['Confirmed']].reset_index()
     return cases
+
+
+def normalize_risk_cases(risk_cases_df):
+    risk_cases_df.loc[risk_cases_df.Confirmed > 0, 'Risk'] = 1.0
+    select_remaining_risk = risk_cases_df.Risk < 1
+    risk_cases_df.loc[select_remaining_risk, 'Risk'] /= \
+        risk_cases_df.loc[select_remaining_risk, 'Risk'].sum
+    columns_rename = {'name_short': 'Country',
+                      'name_pl': 'Kraj',
+                      'ISO3': 'Country_ISO3'}
+    return risk_cases_df.rename(columns=columns_rename)
