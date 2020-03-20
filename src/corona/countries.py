@@ -26,10 +26,6 @@ from importlib.resources import read_text, open_text
 import country_converter as coco
 import pandas as pd
 
-_conv = coco.CountryConverter()
-_conv.data.loc[_conv.data.name_short == 'Kosovo', 'ISO3'] = 'KOS'
-
-
 def _make_countries_df():
     population_data = pd.read_csv(
         open_text('corona.resources', 'population.csv'),
@@ -88,9 +84,6 @@ def add_ISO3_from_name(df: pd.DataFrame, name_column='country_name',
     df['ISO3'] = df[name_column].map(name_to_iso3)
 
 
-_countries_df = _make_countries_df()
-
-
 def get_countries_df(columns=None):
     if columns is None:
         return _countries_df.copy()
@@ -105,3 +98,8 @@ def join_countries_data(df: pd.DataFrame,
                        'population']
     df = df.copy()
     return df.join(get_countries_df(add_columns), on='ISO3')
+
+
+_conv = coco.CountryConverter()
+_conv.data.loc[_conv.data.name_short == 'Kosovo', 'ISO3'] = 'KOS'
+_countries_df = _make_countries_df()

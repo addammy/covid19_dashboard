@@ -1,7 +1,5 @@
 from functools import reduce, partial
 
-import dateparser
-import numpy as np
 import pandas as pd
 
 # How many columns in the time series data, before the time series
@@ -24,7 +22,6 @@ _SERIES = {
 
 def _get_category_df(value_name, url):
     df = pd.read_csv(url)
-    # dates = pd.Series([np.datetime64(dateparser.parse(s)) for s in df.columns[_TIMESERIES_FIXED_COLS:]])
     dates = pd.to_datetime(df.columns[_TIMESERIES_FIXED_COLS:],
                            format='%m/%d/%y')
     dates = pd.Series(dates).dt.normalize().drop_duplicates(keep='last')
@@ -36,8 +33,8 @@ def _get_category_df(value_name, url):
     df2 = df2[df2[value_name] > 0]
     df2[value_name] = df2[value_name].astype('Int64')
 
-    # df2['Date'] = df2['Date'].apply(lambda x:dateparser.parse(x).strftime('%Y-%m-%d'))
-    df2['Date'] = pd.to_datetime(df2['Date'], format='%m/%d/%y').dt.strftime('%Y-%m-%d')
+    df2['Date'] = pd.to_datetime(df2['Date'], format='%m/%d/%y') \
+        .dt.strftime('%Y-%m-%d')
 
     return df2
 

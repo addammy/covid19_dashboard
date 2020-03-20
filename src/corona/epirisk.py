@@ -256,60 +256,32 @@ def query_epirisk(cases, *, mute=True):
                              on='ISO3', how='outer')
     risk_cases_df['Confirmed'] = risk_cases_df['Confirmed'].fillna(0)
     risk_cases_df['Risk'] = risk_cases_df['Risk'].fillna(1)
-    risk_cases_df = normalize_risk_cases(risk_cases_df)
 
-    # TODO: Review
-    # Correct country names
-    # risk_cases_df = assign_country_codes(risk_cases_df)
-
-    # Remove repetitions
+    # Detect repetitions
     repet = risk_cases_df.groupby('ISO3').apply(len)
     if repet.max() > 1:
         repet = repet[repet > 1].index
         print("There are repetitions in risk_cases_df. "
               + str(list(repet)))
-    # repet_list = list(repet[repet.Country > 1].index)
-    # for r in repet_list:
-    #     rdf = risk_cases_df[risk_cases_df.Country_ISO3 == r]
-    #     if rdf.Risk.max() == 1.0:
-    #         todrop = list(rdf.index[:-1])
-    #         risk_cases_df = risk_cases_df.drop(todrop).copy()
-    #     else:
-    #         # what to do if there is several different risks given
-    #         # for the same country
-    #         pass
-    # repet = risk_cases_df.groupby('Country_ISO3').count()
-    # repet_list = list(repet[repet.Country > 1].index)
-    # if len(repet_list) > 0:
-    #     print('There are repetitions in risk_cases for:')
-    #     for r in repet_list:
-    #         print(r)
-
-    # Assign polish names
-    # iso_pl_df = pd.read_csv(StringIO(read_text("corona.resources",
-    #                                            "ISO3_pl.csv")))
-    # risk_cases_df = pd.merge(risk_cases_df, iso_pl_df, how='left',
-    #                          on='Country_ISO3')
-
-    # risk_cases_ratio_df = pd.merge(risk_cases_df, population_df, how='left',
-    #                                left_on='Country_ISO3',
-    #                                right_on='Country Code')
 
     risk_cases_ratio_df = corona.countries.join_countries_data(risk_cases_df)
 
-    # risk_cases_ratio_df = risk_cases_ratio_df[
-    #     ['Country', 'Risk', 'Confirmed', 'Country_ISO3', 'Kraj', 'Population']]
     risk_cases_ratio_df['per_mil'] = risk_cases_ratio_df['Confirmed'].astype(
         float) / risk_cases_ratio_df['population'].astype(float) * 1000000
     bins = [0, 2, 5, 10, 50, 100, 400, 5000]
     labels = ['0-2', '2-5', '5-10', '10-50', '50-100', '100-400', '>400']
 
-    risk_cases_ratio_df['bin']=''
+    risk_cases_ratio_df['bin'] = ''
 
     risk_cases_ratio_df = adds_bin_col(risk_cases_ratio_df)
-    risk_cases_ratio_df['bin'].where(risk_cases_ratio_df.Confirmed.astype(int)==0,
-        pd.cut(risk_cases_ratio_df['per_mil'], bins=bins, labels=labels).astype(str), inplace=True)
+    risk_cases_ratio_df['bin'].where(
+        risk_cases_ratio_df.Confirmed.astype(int) == 0,
+        pd.cut(risk_cases_ratio_df['per_mil'],
+               bins=bins, labels=labels).astype(str),
+        inplace=True
+    )
 
+    risk_cases_ratio_df = normalize_risk_cases(risk_cases_ratio_df)
 
     return connections_df, distribution_df, exported, risk_cases_ratio_df
 
@@ -366,7 +338,7 @@ def normalize_risk_cases(risk_cases_df):
     risk_cases_df.loc[risk_cases_df.Confirmed > 0, 'Risk'] = 1.0
     select_remaining_risk = risk_cases_df.Risk < 1
     risk_cases_df.loc[select_remaining_risk, 'Risk'] /= \
-        risk_cases_df.loc[select_remaining_risk, 'Risk'].sum
+        risk_cases_df.loc[select_remaining_risk, 'Risk'].sum()
     columns_rename = {'name_short': 'Country',
                       'name_pl': 'Kraj',
                       'ISO3': 'Country_ISO3'}

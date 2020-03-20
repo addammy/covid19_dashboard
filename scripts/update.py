@@ -11,7 +11,7 @@ from corona.comparisons import epidemic_summaries, sars_progress
 from corona.statistics import get_big_numbers
 from corona.epirisk import query_epirisk
 from corona.hopkins import get_cases_as_df
-from corona.spreadsheets import SpreadsheetsHandler, sheet_to_df
+from corona.spreadsheets import SpreadsheetsHandler
 
 config = ConfigParser()
 if len(sys.argv) == 2:
@@ -52,7 +52,7 @@ cases_df = get_cases_as_df()
 # - to compare epidemic progress with SARS:
 final_df, sars_df = sars_progress(cases_df)
 # - to compare parameters of various epidemics:
-epidemic_days = epidemic_summaries(cases_df,sheets.get_spreadsheet(
+epidemic_days = epidemic_summaries(cases_df, sheets.get_spreadsheet(
     sheet_ids['EXPORT_EPIDEMIC_DAYS']))
 # - to predict how the current epidemic might keep spreading:
 connections_df, distribution_df, exported_df, risk_cases_df = \

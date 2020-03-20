@@ -1,25 +1,5 @@
 from corona.countries import join_countries_data
 
-countries_replacer = {'Mainland China': 'China',
-                      'UK': 'United Kingdom',
-                      'US': 'United States of America',
-                      'Republic of Ireland': 'Ireland',
-                      'Slovakia': 'Slovak Republic',
-                      'occupied Palestinian territory': 'Palestine',
-                      'Taipei and environs': 'Taiwan',
-                      'Republic of Korea': 'South Korea',
-                      'Congo (Kinshasa)': 'Congo',
-                      'Congo, Dem. Rep.': 'Congo',
-                      'Macao SAR': 'Macao',
-                      'Iran (Islamic Republic of)': 'Iran',
-                      'Hong Kong SAR': 'Hong Kong',
-                      'Holy See': 'Holy See (Vatican City State)',
-                      'Taiwan*': 'Taiwan',
-                      'Korea, South': 'South Korea',
-                      "Cote d'Ivoire": "Côte d'Ivoire",
-                      'Cyprus, Northern': 'Cyprus'
-                      }
-
 
 def get_big_numbers(cases_df):
     """
