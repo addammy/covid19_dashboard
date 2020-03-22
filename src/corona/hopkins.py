@@ -1,7 +1,5 @@
 from functools import reduce, partial
-
 import pandas as pd
-
 # How many columns in the time series data, before the time series
 # columns begin.
 from corona.countries import add_ISO3_from_name

@@ -18,13 +18,12 @@ OUTs:
 Notes:
 - only repetition in mapping epirisk-->coco: Cyprus&North Cyprus
         (will be resolved to Cyprus)
-
 """
 import json
 from importlib.resources import read_text, open_text
-
 import country_converter as coco
 import pandas as pd
+
 
 def _make_countries_df():
     population_data = pd.read_csv(
@@ -58,10 +57,11 @@ def _map_epirisk_ids():
         converted = _conv.convert(label, src='regex', not_found=-1)
         if converted == -1:
             raise KeyError(
-                f'Epirisk country "{label}" not recognized by country_converter.')
+                f'Epirisk country "{label}" not recognized by '
+                f'country_converter.')
         elif converted in _epirisk_mapping:
-            raise KeyError(f'Already assigned ISO3 "{converted}" '
-                           f'to another country id({_epirisk_mapping[converted]}).')
+            raise KeyError(f'Already assigned ISO3 "{converted}" to another'
+                           f' country id({_epirisk_mapping[converted]}).')
         else:
             _epirisk_mapping[converted] = country['id']
     return _epirisk_mapping

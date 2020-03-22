@@ -1,7 +1,6 @@
 import itertools
 import time
 from functools import lru_cache
-
 import gspread
 import pandas as pd
 from oauth2client.service_account import ServiceAccountCredentials

@@ -14,20 +14,17 @@ from corona.countries import get_countries_df
 # will be sent to Epirisk. It introduces potencial problems or inconsistencies,
 # as countries with infections could be presented as only still at risk.
 KEEP_TOP_CASES_COUNT = 110
+_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+           'Oct', 'Nov', 'Dec']
+_epirisk_id_df = _get_epirisk_id_df()
+id_from_iso3 = dict(_epirisk_id_df.itertuples(False, None))
+iso3_from_id = dict(map(reversed, id_from_iso3.items()))
 
 
 def _get_epirisk_id_df():
     return get_countries_df(['ISO3', 'epirisk_id']) \
         .dropna() \
         .astype({'epirisk_id': int})
-
-
-_epirisk_id_df = _get_epirisk_id_df()
-id_from_iso3 = dict(_epirisk_id_df.itertuples(False, None))
-iso3_from_id = dict(map(reversed, id_from_iso3.items()))
-
-_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-           'Oct', 'Nov', 'Dec']
 
 
 @dataclass
@@ -183,12 +180,13 @@ class EpiriskQuery:
         "userdata":{}}
         """
         limited_cases = dict(
-            sorted(self.cases.items(), key=lambda t: t[1])[
-            -KEEP_TOP_CASES_COUNT:]
+            sorted(self.cases.items(), key=lambda t: t[1]
+                   )[-KEEP_TOP_CASES_COUNT:]
         )
         if len(limited_cases) < len(self.cases):
             print(
-                f"Keeping only top {KEEP_TOP_CASES_COUNT} case entries due to Epirisk limits.")
+                f"Keeping only top {KEEP_TOP_CASES_COUNT} case entries due to"
+                f" Epirisk limits.")
 
         # Eliminate non-countries from query response:
         limited_cases[53] = 0  # Northern Cyprus
