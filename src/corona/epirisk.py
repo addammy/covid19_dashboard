@@ -16,6 +16,12 @@ from corona.countries import get_countries_df
 KEEP_TOP_CASES_COUNT = 110
 _months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
            'Oct', 'Nov', 'Dec']
+
+def _get_epirisk_id_df():
+    return get_countries_df(['ISO3', 'epirisk_id']) \
+        .dropna() \
+        .astype({'epirisk_id': int})
+
 _epirisk_id_df = _get_epirisk_id_df()
 id_from_iso3 = dict(_epirisk_id_df.itertuples(False, None))
 iso3_from_id = dict(map(reversed, id_from_iso3.items()))
