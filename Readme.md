@@ -5,6 +5,12 @@ Covid-19 dashboard
 
 http://amanailab.pl/2020/02/04/corona/
 
+![Covid-19 dashboard](screenshots/Screenshot2020-03-07.png)
+
+![Covid-19 dashboard](screenshots/ScreenshotEU2020-03-07.png)
+
+https://amanailab.pl/2020/03/01/covid-19-current-status-and-import-risks/
+
 Table of Contents
 -----------------
 
@@ -22,14 +28,15 @@ Steps we had to take to create the dashboard include:
 1. Importing time-series data from .csv files published on GitHub by John Hopkins University;
 2. Scraping the WHO website;
 3. Cleaning the data;
-4. Saving the data to Google Sheets;
-5. Creating the dashboard in Tableau.
+4. Feeding the data to epirisk.net platform to estimate the future spread of the disease;
+5. Combining result data with auxilary data (countries' population,  ISO standards)
+6. Calculating new parameters
+7. Saving the data to Google Sheets;
+8. Creating the dashboard in Tableau.
 
-This repository shows the final version of steps 1. and 4. Soon it will also include steps 2. and 3.
-
-Additionally in this repository you will find scripts used to download data from the EpiRisk.net platform, 
-which estimates the future spread of diseases. This data is still to be included in our project. 
-
+This repository shows the final version of steps 1. and 3-8. 
+Step 2. will be soon included as well. 
+ 
 Code overview
 -----
 
@@ -37,15 +44,18 @@ Code overview
 
 * **scripts/** includes:
   * update.py - updates data for the dashboard;
-  * epirisk_history.py - provides the EpiRisk.net platform with data from every day of Covid-19 epidemy and gathers the results.
+  * epirisk_history.py - provides the EpiRisk.net platform with data from every day of Covid-19 epidemic and gathers the results.
 
 * **src/** contains the corona package with:
   * hopkins.py - downloading the data from JHU repository;
   * comparisons.py - joining the data from previous epidemics;
   * spreadsheets.py -  accessing Google Sheets;
-  * epirisk.py - querying EpiRisk.net with a given epidemic state.
+  * epirisk.py - querying EpiRisk.net with a given epidemic state; combining results with other data
+  * statistics - calculating top level statistics
   
 ### Tableau
 
-* nCov_Wuhan_2019.twbx - is a Tableau file containing the workbook and data extracts; can be opened with Tableau Public.
+* nCov_Wuhan_2019.twbx - is a Tableau file containing the workbook and data extracts;  it is a visualisation of the growth of a number of confirmed COVID-19 cases in time and its comparison to outbreaks of other diseases; the file can be opened with Tableau Public.
 * nCov_Wuhan_2019.twb - is a Tableau file containing only the workbook in a readable form; can be opened only with Tableau Desktop. 
+* covid19_risk_cases_plus_pl.twbx - is a Tableau file containing the workbook and data extracts; it is a visualisation of the current global reach of the virus and risks of exporting the virus to new countries; the file can be opened with Tableau Public.
+* covid19_risk_cases_plus_pl.twb - is a Tableau file containing only the workbook in a readable form; can be opened only with Tableau Desktop. 
