@@ -43,5 +43,6 @@ def sars_progress(cases_df):
     concatenated data from cases_df and sars_df.
     """
     sars_df = pd.read_csv(resources.open_text('corona.resources', 'SARS.csv'))
+    del sars_df['Recovered']
     both_df = pd.concat([cases_df, sars_df], ignore_index=True, sort=True)
     return both_df, sars_df

@@ -46,8 +46,7 @@ def prepare_cases(df):
     cases_df = df[df.Epidemy == 'Corona'].copy()
     cases_df['Confirmed'] = cases_df.Confirmed.astype(int)
     cases_df['Deaths'] = cases_df['Deaths'].astype(int)
-    cases_df['Recovered'] = cases_df['Recovered'].astype(int)
     cases_df = cases_df[
-        ['ISO3', 'Confirmed', 'Deaths', 'Recovered', 'Date']
+        ['ISO3', 'Confirmed', 'Deaths', 'Date']
     ].dropna().groupby(['ISO3', 'Date']).sum().reset_index()
     return cases_df
