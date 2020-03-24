@@ -10,11 +10,9 @@ _URL_PREFIX = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/' \
               'master/csse_covid_19_data/csse_covid_19_time_series/'
 _SERIES = {
     'Confirmed':
-        _URL_PREFIX + 'time_series_19-covid-Confirmed.csv',
+        _URL_PREFIX + 'time_series_covid19_confirmed_global.csv',
     'Deaths':
-        _URL_PREFIX + 'time_series_19-covid-Deaths.csv',
-    'Recovered':
-        _URL_PREFIX + 'time_series_19-covid-Recovered.csv'
+        _URL_PREFIX + 'time_series_covid19_deaths_global.csv',
 }
 
 
