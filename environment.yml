@@ -1,0 +1,13 @@
+name: covid19_dashboard
+channels:
+  - konstantinstadler
+  - conda-forge
+  - defaults
+dependencies:
+  - country_converter=0.6
+  - gspread=3.1
+  - ipython=7.13
+  - oauth2client=4.1
+  - pandas=1.0
+  - python=3.7
+  - requests=2.23
